@@ -5,7 +5,8 @@
          센터 공식 연혁 자료로 반드시 검수/교체해 주세요.
 
    img 필드에 파일 경로를 넣으면 해당 항목에 사진이 함께 표시됩니다.
-     예) img: 'assets/img/history-2016.jpg', alt: '개소식 현장'
+     img: 'assets/img/history-2016.jpg',
+     alt: { ko: '개소식 현장', en: 'The opening ceremony' }
    ============================================================ */
 
 window.ARRC_TIMELINE = [
@@ -17,17 +18,23 @@ window.ARRC_TIMELINE = [
   {
     year: '2017',
     ko: { title: '문화유산 AR 연구 확대', desc: 'K-Culture Time Machine 등 문화 콘텐츠 기반 증강현실 연구를 넓혔습니다.' },
-    en: { title: 'Cultural heritage AR', desc: 'Expanded AR research on cultural content, including K-Culture Time Machine.' }
+    en: { title: 'Cultural heritage AR', desc: 'Expanded AR research on cultural content, including K-Culture Time Machine.' },
+    img: 'assets/img/research-heritage.jpg',
+    alt: { ko: '사라진 전각을 증강현실로 복원해 보여 주는 화면', en: 'A vanished palace hall reconstructed in augmented reality' }
   },
   {
     year: '2018',
     ko: { title: 'HMD 기반 원격 협업 연구', desc: '머리 착용 디스플레이를 활용한 원격 협업 시스템 연구를 시작했습니다.' },
-    en: { title: 'HMD remote collaboration', desc: 'Began research on remote collaboration systems using head-mounted displays.' }
+    en: { title: 'HMD remote collaboration', desc: 'Began research on remote collaboration systems using head-mounted displays.' },
+    img: 'assets/img/research-transspace.jpg',
+    alt: { ko: 'HMD를 쓴 연구자가 원격 협업 시스템을 시연하는 모습', en: 'A researcher wearing an HMD demonstrating a remote collaboration system' }
   },
   {
     year: '2019',
     ko: { title: 'AR 저작 도구 연구', desc: '비전문가도 증강현실 콘텐츠를 만들 수 있는 저작 도구를 연구했습니다.' },
-    en: { title: 'AR authoring tools', desc: 'Studied authoring tools that let non-experts build augmented reality content.' }
+    en: { title: 'AR authoring tools', desc: 'Studied authoring tools that let non-experts build augmented reality content.' },
+    img: 'assets/img/research-authoring.jpg',
+    alt: { ko: 'HMD를 쓴 사용자가 가상 캐릭터를 손으로 배치하는 모습', en: 'A user in an HMD placing a virtual character by hand' }
   },
   {
     year: '2020',
@@ -62,6 +69,8 @@ window.ARRC_TIMELINE = [
   {
     year: '2026',
     ko: { title: '개소 10주년', desc: '36명의 연구인력, 10건의 진행 과제, 193편의 논문과 함께 다음 10년을 준비합니다.' },
-    en: { title: 'Ten years', desc: 'Preparing the next decade with 36 researchers, 10 active projects and 193 publications.' }
+    en: { title: 'Ten years', desc: 'Preparing the next decade with 36 researchers, 10 active projects and 193 publications.' },
+    img: 'assets/img/people-2025.jpg',
+    alt: { ko: '봄날 캠퍼스에 모인 연구센터 구성원들', en: 'Center members gathered on campus in spring' }
   }
 ];

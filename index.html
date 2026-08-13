@@ -15,10 +15,12 @@
 <meta property="og:title" content="ARRC 10주년 기념 심포지엄">
 <meta property="og:description" content="증강현실 10년, 다음 10년을 열다. 2026. 9. 1.(화) KAIST KI빌딩 퓨전홀.">
 <meta property="og:locale" content="ko_KR">
-<!-- TODO: 1200x630 대표 이미지 제작 후 아래 두 줄 주석 해제
-<meta property="og:image" content="https://arrc.kaist.ac.kr/10th/assets/img/og.jpg">
+<!-- 절대 경로여야 합니다. 도메인이 바뀌면 이 줄도 함께 고쳐 주세요. -->
+<meta property="og:url" content="https://kaist-arrc.github.io/arrc-10th/">
+<meta property="og:image" content="https://kaist-arrc.github.io/arrc-10th/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
--->
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
@@ -50,6 +52,7 @@
       <a href="#about" data-i18n="nav.about">행사 개요</a>
       <a href="#program" data-i18n="nav.program">프로그램</a>
       <a href="#history" data-i18n="nav.history">10년의 발자취</a>
+      <a href="#gallery" data-i18n="nav.gallery">연구와 활동</a>
       <a href="#venue" data-i18n="nav.venue">오시는 길</a>
     </nav>
 
@@ -67,6 +70,9 @@
 
 <!-- ── Hero ─────────────────────────────────────────────── -->
 <section class="hero" id="top">
+  <!-- 2022년 구성원 단체사진. 전원 AR 글래스를 착용한 사진이라 센터 성격이 한눈에 읽힙니다. -->
+  <img class="hero__photo" src="assets/img/hero-arrc.jpg" alt=""
+       width="2000" height="1125" fetchpriority="high" decoding="async">
   <div class="hero__field" aria-hidden="true"></div>
   <div class="wrap hero__inner">
 
@@ -130,7 +136,7 @@
       </div>
       <div class="facts__row">
         <dt data-i18n="about.k.when">일시</dt>
-        <dd data-i18n="about.v.when">2026년 9월 1일 (화) 13:00 - 17:30</dd>
+        <dd data-i18n="about.v.when">2026년 9월 1일 (화) 13:00 - 15:30</dd>
       </div>
       <div class="facts__row">
         <dt data-i18n="about.k.where">장소</dt>
@@ -167,13 +173,36 @@
   </div>
 </section>
 
+<!-- ── 비전 영상 ────────────────────────────────────────── -->
+<section class="section" id="vision">
+  <div class="wrap">
+    <h2 class="section__title" data-i18n="vision.title">연구센터가 그리는 방향</h2>
+    <p class="section__note" data-i18n="vision.note">증강현실과 메타버스 기술이 도시와 일상을 어떻게 바꾸는지 담은 영상입니다.</p>
+
+    <!-- 썸네일만 먼저 띄우고 클릭할 때 iframe 을 붙입니다.
+         초기 로딩이 가벼워지고 유튜브 추적 스크립트도 재생 전까지 실행되지 않습니다.
+         영상을 바꾸려면 main.js 의 VIDEO_ID 한 줄만 고치면 됩니다. -->
+    <div class="video" id="visionVideo"></div>
+  </div>
+</section>
+
 <!-- ── 10년의 발자취 ────────────────────────────────────── -->
-<section class="section" id="history">
+<section class="section section--alt" id="history">
   <div class="wrap">
     <h2 class="section__title" data-i18n="history.title">10년의 발자취</h2>
     <p class="section__note" data-i18n="history.note">2016년 개소 이후 ARRC가 지나온 연구의 궤적입니다.</p>
 
     <ol class="timeline" id="timeline"><!-- assets/js/timeline.js 에서 렌더 --></ol>
+  </div>
+</section>
+
+<!-- ── 연구와 활동 ──────────────────────────────────────── -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <h2 class="section__title" data-i18n="gallery.title">연구와 활동</h2>
+    <p class="section__note" data-i18n="gallery.note">지난 10년 동안 센터가 만들어 온 연구 장면들입니다.</p>
+
+    <div class="bento" id="bento"><!-- assets/js/gallery.js 에서 렌더 --></div>
   </div>
 </section>
 
@@ -256,6 +285,26 @@
   </div>
 </section>
 
+<!-- ── 주최 · 주관 기관 ─────────────────────────────────── -->
+<section class="section orgs" id="orgs">
+  <div class="wrap">
+    <h2 class="orgs__title" data-i18n="orgs.title">주최 · 주관</h2>
+    <!-- 로고가 모두 흰 배경 마크라, 다크 화면에 그대로 얹는 대신
+         각각 밝은 타일 위에 올려 원본 대비를 지킵니다. -->
+    <ul class="orgs__list">
+      <li class="orgs__tile">
+        <img src="assets/img/logo-arrc.png" alt="KAIST 증강현실연구센터" width="300" height="300" loading="lazy">
+      </li>
+      <li class="orgs__tile">
+        <img src="assets/img/logo-kaist.png" alt="KAIST" width="480" height="141" loading="lazy">
+      </li>
+      <li class="orgs__tile">
+        <img src="assets/img/logo-uvr.png" alt="KAIST UVR Lab" width="329" height="204" loading="lazy">
+      </li>
+    </ul>
+  </div>
+</section>
+
 </main>
 
 <footer class="foot">
@@ -287,6 +336,7 @@
 
 <script src="assets/js/program.js"></script>
 <script src="assets/js/timeline.js"></script>
+<script src="assets/js/gallery.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

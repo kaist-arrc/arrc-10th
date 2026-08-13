@@ -21,6 +21,7 @@
     'nav.about':   'Overview',
     'nav.program': 'Program',
     'nav.history': 'Ten years',
+    'nav.gallery': 'Our work',
     'nav.venue':   'Getting here',
 
     'cta.register': 'Register',
@@ -47,7 +48,7 @@
     'about.k.theme': 'Theme',
     'about.v.theme': 'Ten years of AR, opening the next ten',
     'about.k.when':  'Date',
-    'about.v.when':  'Tuesday 1 September 2026, 13:00 - 17:30',
+    'about.v.when':  'Tuesday 1 September 2026, 13:00 - 15:30',
     'about.k.where': 'Venue',
     'about.v.where': 'Fusion Hall, KI Building (E4), KAIST · 291 Daehak-ro, Yuseong-gu, Daejeon',
     'about.k.who':   'Who should come',
@@ -61,8 +62,16 @@
     'program.title': 'Program',
     'program.note':  'The schedule below is provisional and may change. Speakers will be announced as they are confirmed.',
 
+    'vision.title': 'Where the center is heading',
+    'vision.note':  'A look at how augmented reality and metaverse technology reshape a city and everyday life.',
+
     'history.title': 'Ten years of ARRC',
     'history.note':  'The path the center has taken since it opened in 2016.',
+
+    'gallery.title': 'Our work',
+    'gallery.note':  'Scenes from a decade of research at the center.',
+
+    'orgs.title': 'HOSTED BY',
 
     'stats.title':    'ARRC in numbers',
     'stats.members':  'researchers',

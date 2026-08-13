@@ -234,6 +234,29 @@ button:focus-visible,
   overflow: hidden;
 }
 
+/* 배경 사진. 텍스트 대비를 지키려고 크게 어둡게 깔고 위에 스크림을 얹는다. */
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  opacity: .3;
+  filter: grayscale(.35);
+  pointer-events: none;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(100deg, var(--bg) 18%, rgba(11, 15, 20, .82) 46%, rgba(11, 15, 20, .55) 100%),
+    linear-gradient(to bottom, rgba(11, 15, 20, .7) 0%, transparent 28%, var(--bg) 100%);
+  pointer-events: none;
+}
+
 /* AR 공간 앵커를 연상시키는 원근 그리드. 장식이므로 aria-hidden. */
 .hero__field {
   position: absolute;
@@ -247,11 +270,13 @@ button:focus-visible,
   -webkit-mask-image: radial-gradient(120% 80% at 50% 100%, #000 0%, transparent 72%);
           mask-image: radial-gradient(120% 80% at 50% 100%, #000 0%, transparent 72%);
   opacity: .8;
+  z-index: 2;
   pointer-events: none;
 }
 .hero::after {
   content: "";
   position: absolute;
+  z-index: 1;
   left: 50%;
   bottom: -38%;
   width: min(1100px, 120%);
@@ -263,7 +288,7 @@ button:focus-visible,
 
 .hero__inner {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr);
   align-items: center;
@@ -406,6 +431,142 @@ button:focus-visible,
 
 .agenda__item--break .agenda__time { color: var(--fg-3); }
 .agenda__item--break .agenda__title { color: var(--fg-2); font-weight: 500; }
+
+/* ── 비전 영상 (facade) ──────────────────────────────────── */
+
+.video {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: var(--r-box);
+  overflow: hidden;
+  background: var(--surface);
+}
+.video iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.video__btn {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+}
+.video__btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .62;
+  transition: opacity .3s var(--ease), transform .5s var(--ease);
+}
+.video__btn:hover img { opacity: .78; transform: scale(1.02); }
+
+.video__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(58px, 7vw, 78px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  transition: transform .25s var(--ease), background-color .25s var(--ease);
+}
+.video__btn:hover .video__icon { transform: translate(-50%, -50%) scale(1.07); background: var(--accent-hi); }
+.video__btn:active .video__icon { transform: translate(-50%, -50%) scale(.98); }
+
+.video__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1.5rem 1.15rem;
+  text-align: start;
+  background: linear-gradient(to top, rgba(11, 15, 20, .92), transparent);
+  color: var(--fg);
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+/* ── 연구와 활동 (bento) ─────────────────────────────────── */
+
+/* 줄 높이를 고정해야 큰 타일이 두 줄을 차지해도 빈 칸이 생기지 않는다. */
+.bento {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: clamp(170px, 15vw, 215px);
+  gap: clamp(.75rem, 1.6vw, 1.25rem);
+}
+.bento__cell {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.bento__cell[data-col="2"] { grid-column: span 2; }
+.bento__cell[data-col="3"] { grid-column: span 3; }
+.bento__cell[data-col="4"] { grid-column: span 4; }
+.bento__cell[data-row="2"] { grid-row: span 2; }
+
+.bento__frame {
+  flex: 1 1 auto;
+  min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-box);
+  overflow: hidden;
+  background: var(--surface);
+}
+.bento__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .55s var(--ease);
+}
+.bento__cell:hover .bento__frame img { transform: scale(1.03); }
+.bento__cell--placeholder:hover .bento__frame img { transform: none; }
+
+.bento__caption {
+  margin-top: .7rem;
+  color: var(--fg-2);
+  font-size: .875rem;
+}
+.bento__cell--placeholder .bento__caption { color: var(--fg-3); }
+
+/* ── 주최 · 주관 로고 ────────────────────────────────────── */
+
+.orgs { padding-block: clamp(3rem, 6vw, 4.5rem); border-top: 1px solid var(--line); }
+.orgs__title {
+  font-size: .8125rem;
+  font-weight: 700;
+  color: var(--fg-3);
+  letter-spacing: .1em;
+}
+.orgs__list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+/* 로고 원본이 흰 배경 마크라 밝은 타일 위에 올려 대비를 지킨다. */
+.orgs__tile {
+  flex: 0 1 200px;
+  display: grid;
+  place-items: center;
+  min-height: 104px;
+  padding: 1.25rem 1.75rem;
+  background: #F4F6F8;
+  border-radius: var(--r-box);
+}
+.orgs__tile img { max-height: 62px; width: auto; object-fit: contain; }
 
 /* ── 10년의 발자취 (timeline) ────────────────────────────── */
 
@@ -605,6 +766,13 @@ button:focus-visible,
 @media (max-width: 1024px) {
   .hero__inner { grid-template-columns: minmax(0, 1.5fr) minmax(0, .5fr); }
   .venue { grid-template-columns: minmax(0, 1fr); }
+
+  /* 6칸을 4칸으로 접는다. 넓은 타일만 한 줄을 다 쓰고 나머지는 2칸씩
+     짝을 지어 빈 칸이 생기지 않게 한다. */
+  .bento { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .bento__cell[data-col="4"] { grid-column: span 4; }
+  .bento__cell[data-col="3"],
+  .bento__cell[data-col="2"] { grid-column: span 2; }
 }
 
 @media (max-width: 860px) {
@@ -644,6 +812,14 @@ button:focus-visible,
 
   .stats { grid-template-columns: minmax(0, 1fr); }
   .foot__cards { grid-template-columns: minmax(0, 1fr); }
+
+  /* 좁은 화면에서는 한 줄에 하나씩. 높이는 16:9 로 통일한다. */
+  .bento { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; }
+  .bento__cell { grid-column: 1 / -1 !important; grid-row: auto !important; }
+  .bento__frame { aspect-ratio: 16 / 9; flex: none; }
+
+  .orgs__tile { flex: 1 1 140px; min-height: 88px; padding: 1rem 1.25rem; }
+  .orgs__tile img { max-height: 48px; }
 }
 
 @media (max-width: 480px) {

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1130" width="800" height="1130" role="img" aria-label="행사 포스터">
+  <rect width="800" height="1130" fill="#131A23"/>
+  <g fill="none" stroke="#FFFFFF" stroke-opacity=".07">
+    <path d="M50 0V1130"/>
+    <path d="M100 0V1130"/>
+    <path d="M150 0V1130"/>
+    <path d="M200 0V1130"/>
+    <path d="M250 0V1130"/>
+    <path d="M300 0V1130"/>
+    <path d="M350 0V1130"/>
+    <path d="M400 0V1130"/>
+    <path d="M450 0V1130"/>
+    <path d="M500 0V1130"/>
+    <path d="M550 0V1130"/>
+    <path d="M600 0V1130"/>
+    <path d="M650 0V1130"/>
+    <path d="M700 0V1130"/>
+    <path d="M750 0V1130"/>
+    <path d="M0 50H800"/>
+    <path d="M0 100H800"/>
+    <path d="M0 150H800"/>
+    <path d="M0 200H800"/>
+    <path d="M0 250H800"/>
+    <path d="M0 300H800"/>
+    <path d="M0 350H800"/>
+    <path d="M0 400H800"/>
+    <path d="M0 450H800"/>
+    <path d="M0 500H800"/>
+    <path d="M0 550H800"/>
+    <path d="M0 600H800"/>
+    <path d="M0 650H800"/>
+    <path d="M0 700H800"/>
+    <path d="M0 750H800"/>
+    <path d="M0 800H800"/>
+    <path d="M0 850H800"/>
+    <path d="M0 900H800"/>
+    <path d="M0 950H800"/>
+    <path d="M0 1000H800"/>
+    <path d="M0 1050H800"/>
+    <path d="M0 1100H800"/>
+  </g>
+  <rect x="10" y="10" width="780" height="1110" fill="none"
+        stroke="#35C2D6" stroke-opacity=".35" stroke-dasharray="10 8" rx="6"/>
+  <text x="50%" y="565" text-anchor="middle" fill="#9BA7B6"
+        font-family="Pretendard, Malgun Gothic, sans-serif" font-size="31" font-weight="600">행사 포스터</text>
+  <text x="50%" y="624" text-anchor="middle" fill="#5D6675"
+        font-family="ui-monospace, Consolas, monospace" font-size="19" letter-spacing="2">800 x 1130</text>
+</svg>

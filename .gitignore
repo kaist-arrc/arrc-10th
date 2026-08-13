@@ -1,0 +1,9 @@
+# 에디터 / OS
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# 브라우저 자동화 산출물
+.playwright-mcp/

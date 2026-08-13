@@ -1,0 +1,4 @@
+# 확정 전 초안이라 검색 노출을 막아 둡니다.
+# 내용이 확정되면 아래 Disallow 를 지우고 `Allow: /` 로 바꾸세요.
+User-agent: *
+Disallow: /

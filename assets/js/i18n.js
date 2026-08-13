@@ -16,6 +16,8 @@
   'use strict';
 
   var EN = {
+    'draft.notice': 'Internal preview. The program and speakers are not final and may change.',
+
     'nav.about':   'Overview',
     'nav.program': 'Program',
     'nav.history': 'Ten years',

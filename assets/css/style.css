@@ -132,6 +132,21 @@ button:focus-visible,
   pointer-events: none;
 }
 
+/* ── 초안 안내 배너 (확정 후 제거) ───────────────────────── */
+
+.draft {
+  background: var(--accent-soft);
+  border-bottom: 1px solid rgba(53, 194, 214, .26);
+}
+.draft__inner {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding-block: .7rem;
+}
+.draft i { flex: none; color: var(--accent); font-size: 1.125rem; line-height: 1; }
+.draft p { font-size: .875rem; color: var(--fg); }
+
 /* ── Nav ─────────────────────────────────────────────────── */
 
 .nav {

@@ -33,7 +33,7 @@
     'meta.dateLabel':  'Date',
     'meta.date':       'Tue 1 Sep 2026, 13:00',
     'meta.venueLabel': 'Venue',
-    'meta.venue':      'Fusion Hall, KI Building (E4), KAIST',
+    'meta.venue':      'Matrix Hall, 2F, KI Building (E4), KAIST',
 
     'cd.head':  'Time remaining',
     'cd.days':  'days',
@@ -50,7 +50,7 @@
     'about.k.when':  'Date',
     'about.v.when':  'Tuesday 1 September 2026, 13:00 - 15:30',
     'about.k.where': 'Venue',
-    'about.v.where': 'Fusion Hall, KI Building (E4), KAIST · 291 Daehak-ro, Yuseong-gu, Daejeon',
+    'about.v.where': 'Matrix Hall, 2F, KI Building (E4), KAIST · 291 Daehak-ro, Yuseong-gu, Daejeon',
     'about.k.who':   'Who should come',
     'about.v.who':   'XR researchers, industry practitioners, graduate students and anyone curious about the field',
     'about.k.host':  'Host',
@@ -82,7 +82,7 @@
 
     'venue.title':       'Getting here',
     'venue.addrHead':    'Address',
-    'venue.addr':        '291 Daehak-ro, Yuseong-gu, Daejeon<br>Fusion Hall, KI Building (E4), KAIST',
+    'venue.addr':        '291 Daehak-ro, Yuseong-gu, Daejeon<br>Matrix Hall, 2F, KI Building (E4), KAIST',
     'venue.naver':       'Open in Naver Map',
     'venue.transitHead': 'Transport',
     'venue.t1.k': 'Daejeon Station (KTX)',

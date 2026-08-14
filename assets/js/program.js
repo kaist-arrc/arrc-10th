@@ -14,8 +14,8 @@ window.ARRC_PROGRAM = [
   {
     time: '12:30 - 13:00',
     kind: 'break',
-    ko: { title: '등록', desc: '퓨전홀 앞 접수 데스크에서 명찰을 수령해 주세요.' },
-    en: { title: 'Registration', desc: 'Pick up your badge at the desk in front of Fusion Hall.' }
+    ko: { title: '등록', desc: '매트릭스홀 앞 접수 데스크에서 명찰을 수령해 주세요.' },
+    en: { title: 'Registration', desc: 'Pick up your badge at the desk in front of Matrix Hall.' }
   },
   {
     time: '13:00 - 13:10',

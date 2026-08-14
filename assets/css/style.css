@@ -432,10 +432,34 @@ button:focus-visible,
 .agenda__item--break .agenda__time { color: var(--fg-3); }
 .agenda__item--break .agenda__title { color: var(--fg-2); font-weight: 500; }
 
-/* ── 비전 영상 (facade) ──────────────────────────────────── */
+/* ── 비전 영상: 가로 스크롤 레일 ─────────────────────────── */
 
-.video {
-  margin-top: clamp(2rem, 4vw, 3rem);
+.vrail { margin-top: clamp(2rem, 4vw, 3rem); }
+
+.vrail__track {
+  display: flex;
+  gap: clamp(.875rem, 1.6vw, 1.25rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  /* 스크롤 끝에서 카드가 컨테이너 가장자리에 붙게 한다. */
+  padding-block-end: .875rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-hi) transparent;
+}
+.vrail__track::-webkit-scrollbar { height: 6px; }
+.vrail__track::-webkit-scrollbar-track { background: var(--line); border-radius: 99px; }
+.vrail__track::-webkit-scrollbar-thumb { background: var(--line-hi); border-radius: 99px; }
+.vrail__track::-webkit-scrollbar-thumb:hover { background: var(--fg-3); }
+
+.vcard {
+  flex: 0 0 clamp(266px, 31vw, 400px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.vcard__frame {
   position: relative;
   aspect-ratio: 16 / 9;
   border: 1px solid var(--line);
@@ -443,9 +467,9 @@ button:focus-visible,
   overflow: hidden;
   background: var(--surface);
 }
-.video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.vcard__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
 
-.video__btn {
+.vcard__btn {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -455,45 +479,58 @@ button:focus-visible,
   cursor: pointer;
   display: block;
 }
-.video__btn img {
+.vcard__btn img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .62;
+  opacity: .66;
   transition: opacity .3s var(--ease), transform .5s var(--ease);
 }
-.video__btn:hover img { opacity: .78; transform: scale(1.02); }
+.vcard__btn:hover img { opacity: .85; transform: scale(1.03); }
 
-.video__icon {
+.vcard__icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(58px, 7vw, 78px);
+  width: clamp(48px, 4.4vw, 60px);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--accent);
   color: var(--accent-ink);
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
   transition: transform .25s var(--ease), background-color .25s var(--ease);
 }
-.video__btn:hover .video__icon { transform: translate(-50%, -50%) scale(1.07); background: var(--accent-hi); }
-.video__btn:active .video__icon { transform: translate(-50%, -50%) scale(.98); }
+.vcard__btn:hover .vcard__icon { transform: translate(-50%, -50%) scale(1.08); background: var(--accent-hi); }
+.vcard__btn:active .vcard__icon { transform: translate(-50%, -50%) scale(.97); }
 
-.video__label {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 2.5rem 1.5rem 1.15rem;
-  text-align: start;
-  background: linear-gradient(to top, rgba(11, 15, 20, .92), transparent);
-  color: var(--fg);
+.vcard__title {
+  margin-top: .8rem;
   font-size: .9375rem;
   font-weight: 600;
+  line-height: 1.45;
+  color: var(--fg);
 }
+.vcard__channel { margin-top: .25rem; font-size: .8125rem; color: var(--fg-3); }
+
+.vrail__nav { display: flex; justify-content: flex-end; gap: .5rem; margin-top: 1rem; }
+.vrail__btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid var(--line-hi);
+  border-radius: var(--r-ui);
+  color: var(--fg);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color .18s var(--ease), background-color .18s var(--ease), opacity .18s var(--ease);
+}
+.vrail__btn:hover:not(:disabled) { border-color: var(--fg-3); background: rgba(255, 255, 255, .05); }
+.vrail__btn:disabled { opacity: .3; cursor: default; }
 
 /* ── 연구와 활동 (bento) ─────────────────────────────────── */
 
@@ -550,23 +587,29 @@ button:focus-visible,
   color: var(--fg-3);
   letter-spacing: .1em;
 }
+.orgs__title + .orgs__list { margin-top: 1.25rem; }
+.orgs__list + .orgs__title { margin-top: 2.75rem; }
+
 .orgs__list {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: .875rem;
 }
-/* 로고 원본이 흰 배경 마크라 밝은 타일 위에 올려 대비를 지킨다. */
+/* 로고 원본이 대부분 밝은 배경용 마크라 밝은 타일 위에 올려 대비를 지킨다. */
 .orgs__tile {
-  flex: 0 1 200px;
   display: grid;
   place-items: center;
   min-height: 104px;
-  padding: 1.25rem 1.75rem;
+  padding: 1.25rem 1.5rem;
   background: #F4F6F8;
   border-radius: var(--r-box);
 }
-.orgs__tile img { max-height: 62px; width: auto; object-fit: contain; }
+.orgs__tile img { max-width: 100%; max-height: 58px; width: auto; object-fit: contain; }
+
+/* 후원 · 협력은 수가 많아 타일을 한 단계 작게 쓴다. */
+.orgs__list--sm { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); }
+.orgs__list--sm .orgs__tile { min-height: 84px; padding: .9rem 1.15rem; }
+.orgs__list--sm .orgs__tile img { max-height: 42px; }
 
 /* ── 10년의 발자취 (timeline) ────────────────────────────── */
 
@@ -818,8 +861,14 @@ button:focus-visible,
   .bento__cell { grid-column: 1 / -1 !important; grid-row: auto !important; }
   .bento__frame { aspect-ratio: 16 / 9; flex: none; }
 
-  .orgs__tile { flex: 1 1 140px; min-height: 88px; padding: 1rem 1.25rem; }
-  .orgs__tile img { max-height: 48px; }
+  .orgs__list { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .orgs__tile { min-height: 84px; padding: 1rem 1.15rem; }
+  .orgs__tile img { max-height: 42px; }
+  .orgs__list--sm { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); }
+  .orgs__list--sm .orgs__tile { min-height: 68px; padding: .7rem .85rem; }
+  .orgs__list--sm .orgs__tile img { max-height: 32px; }
+
+  .vcard { flex-basis: 78vw; }
 }
 
 @media (max-width: 480px) {

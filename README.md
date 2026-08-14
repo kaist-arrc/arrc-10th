@@ -28,8 +28,10 @@ assets/js/main.js          구글폼 주소, 영상 ID, 카운트다운, 네비�
 assets/js/program.js       프로그램 타임테이블 데이터
 assets/js/timeline.js      10년 연혁 데이터
 assets/js/gallery.js       "연구와 활동" 벤토 그리드 데이터
+assets/js/videos.js        "연구센터가 그리는 방향" 영상 목록
 assets/js/i18n.js          영어 문자열 사전
 assets/img/                사진, 로고, 플레이스홀더
+assets/img/orgs/           후원 · 협력 기관 로고
 .nojekyll                  GitHub Pages 의 Jekyll 처리 비활성화
 ```
 
@@ -49,6 +51,11 @@ assets/img/                사진, 로고, 플레이스홀더
 | `favicon.svg` | 브라우저 탭 | 직접 제작 |
 | `placeholder-event.svg` | 갤러리 5번 칸 | **교체 필요** |
 | `placeholder-demo.svg` `placeholder-poster.svg` | 아직 미사용 | 필요할 때 쓰세요 |
+| `orgs/*.png` (19개) | 후원 · 협력 기관 | meta.kaist.ac.kr 하단에서 수집 |
+
+후원 · 협력 기관 목록을 고치려면 `index.html` 의 `<section id="orgs">` 안에서
+`<li>` 를 더하거나 빼면 됩니다. 로고 파일은 `assets/img/orgs/` 에 넣고, 밝은
+타일 위에 올라가므로 배경이 투명하거나 흰색인 파일이면 됩니다.
 
 사진을 교체할 때는 같은 파일명으로 덮어쓰는 게 가장 간단합니다. 다른 이름을
 쓰려면 `gallery.js` / `timeline.js` 의 경로만 바꾸면 됩니다.
@@ -94,18 +101,21 @@ REGISTER_URL: 'https://forms.gle/xxxxxxxx',
 }
 ```
 
-### 4. 비전 영상
+### 4. 영상
 
-`assets/js/main.js` 의 `VIDEO_ID` 한 줄만 바꾸면 썸네일까지 함께 교체됩니다.
+`assets/js/videos.js` 의 배열을 고칩니다. 가로로 스크롤되는 카드 목록이라
+개수 제한은 없고, 위에서부터 순서대로 나옵니다.
 
 ```js
-VIDEO_ID: '-6tqLN9YHNc',
+{ id: 'sO562A7u0eQ',
+  ko: { title: '메타-대전 컨셉영상', channel: 'KAIST 메타버스대학원' },
+  en: { title: 'Meta-Daejeon concept film', channel: 'KAIST Metaverse Graduate School' } }
 ```
 
-유튜브 주소가 `youtube.com/watch?v=abcd1234` 라면 `abcd1234` 부분입니다.
-영상 제목은 같은 파일의 `VIDEO_LABEL` 에서 고칩니다.
+`id` 는 유튜브 주소 `youtube.com/watch?v=abcd1234` 의 `abcd1234` 부분입니다.
+썸네일은 이 값으로 자동으로 가져오니 따로 넣을 필요가 없습니다.
 
-썸네일을 먼저 보여 주고 클릭할 때만 유튜브를 불러오는 방식이라, 재생하기
+썸네일을 먼저 보여 주고 카드를 눌러야 유튜브를 불러오는 방식이라, 재생하기
 전까지는 유튜브 스크립트나 쿠키가 실행되지 않습니다.
 
 ### 5. 갤러리 (연구와 활동)
@@ -154,8 +164,12 @@ VIDEO_ID: '-6tqLN9YHNc',
 - [ ] **퓨전홀 층수** - 현재 표기하지 않았습니다. 확인 후 장소 표기에 추가
 - [ ] **지도 핀 위치** - 주소 검색 결과 기준입니다. 실제 건물 위치와 맞는지 확인
 - [ ] **주차 안내** - 현재 "추후 공지"로 되어 있습니다
-- [ ] **비전 영상** - 지금은 KBS 대전 뉴스 클립입니다. 자체 제작 영상이 나오면
-      `main.js` 의 `VIDEO_ID` 와 `VIDEO_LABEL` 교체
+- [ ] **후원 · 협력 기관 목록** - meta.kaist.ac.kr(메타버스대학원)의 Hosted /
+      Supported / Partners 를 그대로 가져온 것입니다. **이번 행사의 실제
+      후원·협력 기관과 일치하는지 반드시 확인**하고, 기업 로고 사용에 문제가
+      없는지 점검해 주세요. 공개 페이지에 기업명을 싣는 일입니다
+- [ ] **영상** - 지금은 KAIST 메타버스대학원 · KBS · MBC 의 기존 영상입니다.
+      자체 제작 영상이 나오면 `videos.js` 맨 앞에 추가
 - [ ] **행사 스냅샷** - `assets/img/placeholder-event.svg` 자리에 실제 사진 필요
 - [ ] **사진 사용 동의** - 구성원 단체사진 두 장에 얼굴이 식별됩니다.
       대외 공개 페이지에 쓰는 것이 맞는지 한 번 확인해 주세요

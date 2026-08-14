@@ -15,21 +15,11 @@
     REGISTER_URL: '',
 
     // 행사 시작 시각 (KST 기준). 카운트다운이 이 값을 봅니다.
-    EVENT_START: '2026-09-01T13:00:00+09:00',
-
-    // 비전 영상. 이 한 줄만 바꾸면 썸네일까지 함께 교체됩니다.
-    // TODO: 자체 제작 영상이 나오면 교체해 주세요. 지금은 메타대전 포럼 영상입니다.
-    //   -6tqLN9YHNc  메타버스 기술로 노잼 도시를 뉴잼 대전으로 (KBS대전, 1:45)  <- 현재
-    //   YoNZijOyOjo  메타-대전 포럼 (KAIST 메타버스대학원, 4:55:46)
-    //   Jm8CdKj2jOc  메타대전 포럼 2024 풀버전 (조승래TV, 2:28:39)
-    // 위 두 개는 전체 중계본이라 썸네일이 화면공유 슬라이드로 잡힙니다.
-    VIDEO_ID: '-6tqLN9YHNc'
+    EVENT_START: '2026-09-01T13:00:00+09:00'
   };
 
-  var VIDEO_LABEL = {
-    ko: { title: '메타버스 기술로 그리는 대전 (KBS 대전)', play: '영상 재생' },
-    en: { title: 'Reimagining Daejeon with metaverse technology (KBS Daejeon)', play: 'Play video' }
-  };
+  // 영상 목록 자체는 assets/js/videos.js 에 있습니다.
+  var PLAY_LABEL = { ko: '영상 재생', en: 'Play video' };
 
   var REGISTER_LABEL = {
     ko: { open: '참가 신청', closed: '신청 준비 중' },
@@ -140,49 +130,111 @@
     });
   }
 
-  /* ── 비전 영상 (facade) ────────────────────────────────── */
+  /* ── 비전 영상: 가로 스크롤 레일 ───────────────────────── */
 
-  function renderVideo(lang) {
-    var box = $('#visionVideo');
-    if (!box || !CONFIG.VIDEO_ID) return;
+  function renderVideos(lang) {
+    var track = $('#videoTrack');
+    var data = window.ARRC_VIDEOS;
+    if (!track || !data) return;
 
-    // 이미 재생을 눌러 iframe 이 올라갔다면 언어를 바꿔도 건드리지 않는다.
-    if (box.querySelector('iframe')) return;
+    var playing = PLAY_LABEL[lang] || PLAY_LABEL.ko;
 
-    var label = VIDEO_LABEL[lang] || VIDEO_LABEL.ko;
-    box.textContent = '';
+    // 재생 중인 카드는 언어를 바꿔도 끊기지 않게 그대로 둔다.
+    var live = {};
+    $$('.vcard', track).forEach(function (c) {
+      var frame = c.querySelector('iframe');
+      if (frame) live[c.dataset.id] = frame;
+    });
 
-    var btn = el('button', 'video__btn');
+    track.textContent = '';
+
+    data.forEach(function (row) {
+      var copy = row[lang] || row.ko;
+
+      var card = el('li', 'vcard');
+      card.dataset.id = row.id;
+
+      var frame = el('div', 'vcard__frame');
+
+      if (live[row.id]) {
+        frame.appendChild(live[row.id]);
+      } else {
+        frame.appendChild(buildFacade(row, copy, playing, frame));
+      }
+
+      card.appendChild(frame);
+      card.appendChild(el('p', 'vcard__title', copy.title));
+      card.appendChild(el('p', 'vcard__channel', copy.channel));
+      track.appendChild(card);
+    });
+  }
+
+  function buildFacade(row, copy, playing, frame) {
+    var btn = el('button', 'vcard__btn');
     btn.type = 'button';
-    btn.setAttribute('aria-label', label.play + ': ' + label.title);
+    btn.setAttribute('aria-label', playing + ': ' + copy.title);
 
     var thumb = el('img');
-    thumb.src = 'https://i.ytimg.com/vi/' + CONFIG.VIDEO_ID + '/maxresdefault.jpg';
+    thumb.src = 'https://i.ytimg.com/vi/' + row.id + '/maxresdefault.jpg';
     thumb.alt = '';
     thumb.loading = 'lazy';
-    // maxres 가 없는 영상이 있어 실패하면 항상 존재하는 hq 로 내려간다.
+    // maxres 가 없는 영상이 있어, 실패하면 항상 존재하는 hq 로 내려간다.
     thumb.addEventListener('error', function () {
-      thumb.src = 'https://i.ytimg.com/vi/' + CONFIG.VIDEO_ID + '/hqdefault.jpg';
+      thumb.src = 'https://i.ytimg.com/vi/' + row.id + '/hqdefault.jpg';
     }, { once: true });
 
-    var icon = el('span', 'video__icon');
+    var icon = el('span', 'vcard__icon');
     icon.innerHTML = '<i class="ph ph-play" aria-hidden="true"></i>';
 
     btn.appendChild(thumb);
     btn.appendChild(icon);
-    btn.appendChild(el('span', 'video__label', label.title));
 
     btn.addEventListener('click', function () {
-      var frame = document.createElement('iframe');
-      frame.src = 'https://www.youtube-nocookie.com/embed/' + CONFIG.VIDEO_ID + '?autoplay=1&rel=0';
-      frame.title = label.title;
-      frame.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; web-share';
-      frame.allowFullscreen = true;
-      box.textContent = '';
-      box.appendChild(frame);
+      var player = document.createElement('iframe');
+      player.src = 'https://www.youtube-nocookie.com/embed/' + row.id + '?autoplay=1&rel=0';
+      player.title = copy.title;
+      player.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; web-share';
+      player.allowFullscreen = true;
+      frame.textContent = '';
+      frame.appendChild(player);
     });
 
-    box.appendChild(btn);
+    return btn;
+  }
+
+  function setupVideoRail() {
+    var track = $('#videoTrack');
+    var rail = $('#videoRail');
+    if (!track || !rail) return;
+
+    var buttons = $$('.vrail__btn', rail);
+
+    function step(dir) {
+      var card = track.querySelector('.vcard');
+      if (!card) return;
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      track.scrollBy({
+        left: dir * (card.getBoundingClientRect().width + gap),
+        behavior: reduceMotion ? 'auto' : 'smooth'
+      });
+    }
+
+    function syncButtons() {
+      var max = track.scrollWidth - track.clientWidth;
+      buttons.forEach(function (b) {
+        var dir = Number(b.dataset.dir);
+        b.disabled = dir < 0 ? track.scrollLeft <= 1 : track.scrollLeft >= max - 1;
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { step(Number(b.dataset.dir)); });
+    });
+
+    // scroll 이벤트는 이 요소 하나에만 붙고 프레임마다 상태를 계산하지 않는다.
+    track.addEventListener('scroll', syncButtons, { passive: true });
+    window.addEventListener('resize', syncButtons);
+    syncButtons();
   }
 
   /* ── 참가 신청 버튼 상태 ───────────────────────────────── */
@@ -244,7 +296,7 @@
 
   function setupReveal() {
     // JS 가 동작할 때만 숨겼다가 보여 준다. 스크립트가 실패하면 그냥 다 보인다.
-    var targets = $$('.section__title, .section__note, .facts, .agenda, .video, .timeline, ' +
+    var targets = $$('.section__title, .section__note, .facts, .agenda, .vrail, .timeline, ' +
                      '.bento, .stats, .venue, .register__inner, .orgs__list, .foot__cards');
     if (!targets.length || reduceMotion || !('IntersectionObserver' in window)) return;
 
@@ -348,7 +400,7 @@
       renderProgram(lang);
       renderTimeline(lang);
       renderGallery(lang);
-      renderVideo(lang);
+      renderVideos(lang);
       syncRegisterButtons(lang);
     }
 
@@ -373,9 +425,10 @@
   /* ── 시작 ──────────────────────────────────────────────── */
 
   function init() {
-    setupLang();       // 프로그램/연혁 렌더와 버튼 상태를 함께 처리한다.
+    setupLang();       // 프로그램/연혁/갤러리/영상 렌더와 버튼 상태를 함께 처리한다.
     startCountdown();
     setupNav();
+    setupVideoRail();  // 카드가 그려진 뒤에 화살표 상태를 계산한다.
     setupStats();
     setupReveal();
   }

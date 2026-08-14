@@ -179,10 +179,20 @@
     <h2 class="section__title" data-i18n="vision.title">연구센터가 그리는 방향</h2>
     <p class="section__note" data-i18n="vision.note">증강현실과 메타버스 기술이 도시와 일상을 어떻게 바꾸는지 담은 영상입니다.</p>
 
-    <!-- 썸네일만 먼저 띄우고 클릭할 때 iframe 을 붙입니다.
+    <!-- 썸네일만 먼저 띄우고 카드를 누를 때 iframe 을 붙입니다.
          초기 로딩이 가벼워지고 유튜브 추적 스크립트도 재생 전까지 실행되지 않습니다.
-         영상을 바꾸려면 main.js 의 VIDEO_ID 한 줄만 고치면 됩니다. -->
-    <div class="video" id="visionVideo"></div>
+         목록은 assets/js/videos.js 에서 관리합니다. -->
+    <div class="vrail" id="videoRail">
+      <ul class="vrail__track" id="videoTrack"></ul>
+      <div class="vrail__nav">
+        <button type="button" class="vrail__btn" data-dir="-1" aria-label="이전 영상 보기">
+          <i class="ph ph-caret-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="vrail__btn" data-dir="1" aria-label="다음 영상 보기">
+          <i class="ph ph-caret-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -245,7 +255,7 @@
         <h3 data-i18n="venue.addrHead">주소</h3>
         <p class="venue__addr" data-i18n="venue.addr">대전광역시 유성구 대학로 291<br>KAIST KI빌딩(E4) 퓨전홀</p>
         <p class="venue__links">
-          <a href="https://map.naver.com/p/search/KAIST%20KI%EB%B9%8C%EB%94%A9" target="_blank" rel="noopener">
+          <a href="https://naver.me/FO9wgBkX" target="_blank" rel="noopener">
             <i class="ph ph-map-pin" aria-hidden="true"></i><span data-i18n="venue.naver">네이버 지도에서 보기</span>
           </a>
         </p>
@@ -288,19 +298,40 @@
 <!-- ── 주최 · 주관 기관 ─────────────────────────────────── -->
 <section class="section orgs" id="orgs">
   <div class="wrap">
-    <h2 class="orgs__title" data-i18n="orgs.title">주최 · 주관</h2>
-    <!-- 로고가 모두 흰 배경 마크라, 다크 화면에 그대로 얹는 대신
+    <!-- 로고 원본이 대부분 밝은 배경용 마크라, 다크 화면에 그대로 얹는 대신
          각각 밝은 타일 위에 올려 원본 대비를 지킵니다. -->
+    <h2 class="orgs__title" data-i18n="orgs.host">주최 · 주관</h2>
     <ul class="orgs__list">
-      <li class="orgs__tile">
-        <img src="assets/img/logo-arrc.png" alt="KAIST 증강현실연구센터" width="300" height="300" loading="lazy">
-      </li>
-      <li class="orgs__tile">
-        <img src="assets/img/logo-kaist.png" alt="KAIST" width="480" height="141" loading="lazy">
-      </li>
-      <li class="orgs__tile">
-        <img src="assets/img/logo-uvr.png" alt="KAIST UVR Lab" width="329" height="204" loading="lazy">
-      </li>
+      <li class="orgs__tile"><img src="assets/img/logo-arrc.png" alt="KAIST 증강현실연구센터" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/logo-kaist.png" alt="KAIST" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/logo-uvr.png" alt="KAIST UVR Lab" loading="lazy"></li>
+    </ul>
+
+    <h2 class="orgs__title" data-i18n="orgs.support">후원</h2>
+    <ul class="orgs__list orgs__list--sm">
+      <li class="orgs__tile"><img src="assets/img/orgs/msit.png" alt="과학기술정보통신부" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/motie.png" alt="산업통상자원부" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/daejeon.png" alt="대전광역시" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/iitp.png" alt="정보통신기획평가원 IITP" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/kiat.png" alt="한국산업기술진흥원 KIAT" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/dicia.png" alt="DICIA" loading="lazy"></li>
+    </ul>
+
+    <h2 class="orgs__title" data-i18n="orgs.partners">협력 기관</h2>
+    <ul class="orgs__list orgs__list--sm">
+      <li class="orgs__tile"><img src="assets/img/orgs/kt.png" alt="KT" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/naver.png" alt="NAVER" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/meta.png" alt="Meta" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/unity.png" alt="Unity" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/nc.png" alt="NC" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/galaxy.png" alt="Galaxy Corporation" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/virnect.png" alt="VIRNECT" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/maxst.png" alt="MAXST" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/ast.png" alt="AST Korea" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/postmedia.png" alt="Postmedia" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/vproductions.png" alt="Victoria Productions" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/inno.png" alt="Inno Simulation" loading="lazy"></li>
+      <li class="orgs__tile"><img src="assets/img/orgs/metavu.png" alt="MetaVu" loading="lazy"></li>
     </ul>
   </div>
 </section>
@@ -310,19 +341,20 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot__cards">
-      <a class="fcard" href="https://arrc.kaist.ac.kr" target="_blank" rel="noopener">
-        <span class="fcard__k" data-i18n="foot.c1.k">증강현실연구센터</span>
-        <span class="fcard__v">arrc.kaist.ac.kr</span>
-        <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
-      </a>
+      <!-- arrc.kaist.ac.kr 는 arrc.uvrlab.org 의 구버전이라 신버전 하나만 남깁니다. -->
       <a class="fcard" href="https://arrc.uvrlab.org" target="_blank" rel="noopener">
-        <span class="fcard__k" data-i18n="foot.c2.k">연구 포털</span>
+        <span class="fcard__k" data-i18n="foot.c1.k">증강현실연구센터</span>
         <span class="fcard__v">arrc.uvrlab.org</span>
         <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
       </a>
       <a class="fcard" href="https://uvrlab.org" target="_blank" rel="noopener">
-        <span class="fcard__k" data-i18n="foot.c3.k">KAIST UVR Lab</span>
+        <span class="fcard__k" data-i18n="foot.c2.k">KAIST UVR Lab</span>
         <span class="fcard__v">uvrlab.org</span>
+        <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a class="fcard" href="https://meta.kaist.ac.kr" target="_blank" rel="noopener">
+        <span class="fcard__k" data-i18n="foot.c3.k">메타버스대학원</span>
+        <span class="fcard__v">meta.kaist.ac.kr</span>
         <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
       </a>
     </div>
@@ -337,6 +369,7 @@
 <script src="assets/js/program.js"></script>
 <script src="assets/js/timeline.js"></script>
 <script src="assets/js/gallery.js"></script>
+<script src="assets/js/videos.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

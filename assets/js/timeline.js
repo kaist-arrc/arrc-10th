@@ -12,8 +12,16 @@
 window.ARRC_TIMELINE = [
   {
     year: '2016',
-    ko: { title: '증강현실연구센터 개소', desc: 'KAIST KI 산하 연구센터로 출범하며 산학연 AR 연구 거점을 마련했습니다.' },
-    en: { title: 'ARRC opens', desc: 'Launched under KAIST KI as a hub for industry and academia collaboration in AR.' }
+    ko: {
+      title: '증강현실연구센터 개소',
+      desc: 'KAIST KI 산하 연구센터로 출범하며 산학연 AR 연구 거점을 마련했습니다. ' +
+            '개소와 함께 시작한 콜로퀴엄은 지금까지 한 해도 거르지 않고 이어지고 있습니다.'
+    },
+    en: {
+      title: 'ARRC opens',
+      desc: 'Launched under KAIST KI as a hub for industry and academia collaboration in AR. ' +
+            'The colloquium started with the center and has run every year since.'
+    }
   },
   {
     year: '2017',
@@ -63,8 +71,8 @@ window.ARRC_TIMELINE = [
   },
   {
     year: '2025',
-    ko: { title: '콜로퀴엄 정례화', desc: 'ARRC/PMRC 콜로퀴엄 시리즈를 통해 연구 교류를 정기적으로 이어갔습니다.' },
-    en: { title: 'Colloquium series', desc: 'Established the ARRC/PMRC colloquium series as a regular exchange.' }
+    ko: { title: '산학협력 네트워크 확대', desc: '국내외 기업 및 연구기관과의 협력 범위를 넓혔습니다.' },
+    en: { title: 'A wider partner network', desc: 'Broadened collaboration with companies and research institutes at home and abroad.' }
   },
   {
     year: '2026',

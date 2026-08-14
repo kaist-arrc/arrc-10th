@@ -71,7 +71,9 @@
     'gallery.title': 'Our work',
     'gallery.note':  'Scenes from a decade of research at the center.',
 
-    'orgs.title': 'HOSTED BY',
+    'orgs.host':     'HOSTED BY',
+    'orgs.support':  'SUPPORTED BY',
+    'orgs.partners': 'PARTNERS',
 
     'stats.title':    'ARRC in numbers',
     'stats.members':  'researchers',
@@ -97,8 +99,8 @@
     'reg.deadline': 'Registration closes Monday 25 August 2026, 18:00',
 
     'foot.c1.k': 'Research center',
-    'foot.c2.k': 'Research portal',
-    'foot.c3.k': 'KAIST UVR Lab',
+    'foot.c2.k': 'KAIST UVR Lab',
+    'foot.c3.k': 'Metaverse Graduate School',
     'foot.org':  'KAIST Augmented Reality Research Center (ARRC)<br>KI Building (E4), 291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea'
   };
 

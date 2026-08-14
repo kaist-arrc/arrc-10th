@@ -606,10 +606,18 @@ button:focus-visible,
 }
 .orgs__tile img { max-width: 100%; max-height: 58px; width: auto; object-fit: contain; }
 
-/* 후원 · 협력은 수가 많아 타일을 한 단계 작게 쓴다. */
+/* 협력 기관은 수가 많아 타일을 한 단계 작게 쓴다. */
 .orgs__list--sm { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); }
 .orgs__list--sm .orgs__tile { min-height: 84px; padding: .9rem 1.15rem; }
 .orgs__list--sm .orgs__tile img { max-height: 42px; }
+
+/* 줄바꿈이 어긋나지 않게 열 수를 고정하는 경우. */
+.orgs__list--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.orgs__list--6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+/* 3열은 타일이 넓어져 기본 크기로는 로고가 묻힌다. */
+.orgs__list--3 .orgs__tile { min-height: 124px; }
+.orgs__list--3 .orgs__tile img { max-height: 76px; }
 
 /* ── 10년의 발자취 (timeline) ────────────────────────────── */
 
@@ -816,6 +824,9 @@ button:focus-visible,
   .bento__cell[data-col="4"] { grid-column: span 4; }
   .bento__cell[data-col="3"],
   .bento__cell[data-col="2"] { grid-column: span 2; }
+
+  /* 협력 12곳을 6+6 대신 4+4+4 로 떨어뜨린다. */
+  .orgs__list--6 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 @media (max-width: 860px) {
@@ -867,6 +878,9 @@ button:focus-visible,
   .orgs__list--sm { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); }
   .orgs__list--sm .orgs__tile { min-height: 68px; padding: .7rem .85rem; }
   .orgs__list--sm .orgs__tile img { max-height: 32px; }
+  /* 좁은 화면에서는 3열이 너무 눌린다. 후원 2+2+2, 협력 3+3+3+3. */
+  .orgs__list--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .orgs__list--6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   .vcard { flex-basis: 78vw; }
 }

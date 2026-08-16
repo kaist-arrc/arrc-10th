@@ -48,7 +48,7 @@
     'about.k.theme': 'Theme',
     'about.v.theme': 'Ten years of AR, opening the next ten',
     'about.k.when':  'Date',
-    'about.v.when':  'Tuesday 1 September 2026, 13:00 - 15:30',
+    'about.v.when':  'Tuesday 1 September 2026, 13:00 - 17:30',
     'about.k.where': 'Venue',
     'about.v.where': 'Matrix Hall, 2F, KI Building (E4), KAIST · 291 Daehak-ro, Yuseong-gu, Daejeon',
     'about.k.who':   'Who should come',

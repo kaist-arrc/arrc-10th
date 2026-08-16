@@ -56,6 +56,21 @@
       var body = el('div');
       body.appendChild(el('h3', 'agenda__title', copy.title));
       if (copy.desc) body.appendChild(el('p', 'agenda__desc', copy.desc));
+
+      // 초청강연처럼 하위 발표 목록이 있는 항목.
+      // 바깥의 list 를 가리지 않도록 이름을 따로 쓴다.
+      if (row.talks && row.talks.length) {
+        var talkList = el('ol', 'talks');
+        row.talks.forEach(function (talk) {
+          var t = talk[lang] || talk.ko;
+          var li = el('li', 'talks__item' + (talk.tbd ? ' talks__item--tbd' : ''));
+          li.appendChild(el('p', 'talks__title', t.title));
+          if (t.who) li.appendChild(el('p', 'talks__who', t.who));
+          talkList.appendChild(li);
+        });
+        body.appendChild(talkList);
+      }
+
       item.appendChild(body);
 
       list.appendChild(item);

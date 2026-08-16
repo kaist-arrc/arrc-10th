@@ -51,14 +51,33 @@ window.ARRC_PROGRAM = [
   },
   {
     time: '14:05 - 15:35',
-    ko: {
-      title: '초청강연',
-      desc: 'KEA 등 5개 기관 내외, 기관당 15분. 토론이 포함됩니다. 참여 기관은 확정 후 안내드립니다.'
-    },
-    en: {
-      title: 'Invited talks',
-      desc: 'About five organizations including KEA, 15 minutes each, discussion included. Participants will be announced once confirmed.'
-    }
+    ko: { title: '초청강연', desc: '강연당 15분, 이후 토론이 이어집니다.' },
+    en: { title: 'Invited talks', desc: 'Fifteen minutes per talk, followed by a discussion.' },
+    // 주제나 연사가 비면 tbd: true 를 주세요. 흐린 글씨로 표시됩니다.
+    talks: [
+      {
+        ko: { title: 'AIR4BTS: 초시공간 경험공유와 전이', who: '우운택 · KAIST' },
+        en: { title: 'AIR4BTS: sharing and transferring experience across time and space', who: 'Woontack Woo · KAIST' }
+      },
+      {
+        ko: { title: '인간과 공존하는 로봇을 위한 인간-로봇 협업 데이터/학습 플랫폼', who: '김민아 · KISTI' },
+        en: { title: 'A human-robot collaboration data and learning platform for robots that live alongside people', who: 'Mina Kim · KISTI' }
+      },
+      {
+        ko: { title: '가상융합(XR-Twin) 기반 건설 피지컬 AI 실증·검증 플랫폼', who: '박형진 · 한국건설기술연구원' },
+        en: { title: 'An XR-Twin platform for testing and validating physical AI in construction', who: 'Hyungjin Park · KICT' }
+      },
+      {
+        tbd: true,
+        ko: { title: '주제 미정', who: 'ETRI' },
+        en: { title: 'Topic to be announced', who: 'ETRI' }
+      },
+      {
+        tbd: true,
+        ko: { title: '주제 미정', who: '하태진 · 버넥트' },
+        en: { title: 'Topic to be announced', who: 'Taejin Ha · VIRNECT' }
+      }
+    ]
   },
   {
     time: '15:35 - 16:35',

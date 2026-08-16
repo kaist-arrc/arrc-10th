@@ -27,7 +27,7 @@
     'cta.register': 'Register',
     'cta.program':  'See the program',
 
-    'hero.title': 'Ten years of AR.<br>Opening the next ten.',
+    'hero.title': 'Ten years at the centre of AR.<br>Opening the next ten.',
     'hero.sub':   'The KAIST Augmented Reality Research Center looks back on a decade of work and sets the direction for the next one.',
 
     'meta.dateLabel':  'Date',
@@ -44,9 +44,9 @@
 
     'about.title':   'Event overview',
     'about.k.name':  'Event',
-    'about.v.name':  'ARRC 10th Anniversary Symposium',
+    'about.v.name':  'KAIST ARRC 10th Anniversary Symposium',
     'about.k.theme': 'Theme',
-    'about.v.theme': 'Ten years of AR, opening the next ten',
+    'about.v.theme': 'Ten years at the centre of AR research, opening the next ten',
     'about.k.when':  'Date',
     'about.v.when':  'Tuesday 1 September 2026, 13:00 - 17:30',
     'about.k.where': 'Venue',
@@ -54,13 +54,13 @@
     'about.k.who':   'Who should come',
     'about.v.who':   'XR researchers, industry practitioners, graduate students and anyone curious about the field',
     'about.k.host':  'Host',
-    'about.v.host':  'KAIST Augmented Reality Research Center (ARRC) · KAIST KI-ITAIC',
+    'about.v.host':  'KAIST KI-ITAIC Augmented Reality Research Center (ARRC)',
     'about.k.fee':   'Fee',
     'about.v.fee':   'Free, advance registration required',
     'about.k.ask':   'Contact',
 
     'program.title': 'Program',
-    'program.note':  'The schedule below is provisional and may change. Speakers will be announced as they are confirmed.',
+    'program.note':  'The schedule below is provisional and may change. Some talks are still awaiting a confirmed topic or speaker.',
 
     'vision.title': 'Where the center is heading',
     'vision.note':  'A look at how augmented reality and metaverse technology reshape a city and everyday life.',
@@ -105,8 +105,8 @@
   };
 
   var TITLE = {
-    ko: 'ARRC 10주년 기념 심포지엄 | KAIST 증강현실연구센터',
-    en: 'ARRC 10th Anniversary Symposium | KAIST Augmented Reality Research Center'
+    ko: 'KAIST ARRC 10주년 기념 심포지엄 | 증강현실연구센터',
+    en: 'KAIST ARRC 10th Anniversary Symposium | Augmented Reality Research Center'
   };
 
   var STORE_KEY = 'arrc10.lang';

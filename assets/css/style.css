@@ -432,6 +432,35 @@ button:focus-visible,
 .agenda__item--break .agenda__time { color: var(--fg-3); }
 .agenda__item--break .agenda__title { color: var(--fg-2); font-weight: 500; }
 
+/* 초청강연 하위 발표 목록 */
+.talks {
+  margin-top: 1rem;
+  counter-reset: talk;
+  display: grid;
+  gap: .7rem;
+}
+.talks__item {
+  counter-increment: talk;
+  position: relative;
+  padding-inline-start: 2rem;
+  max-width: 62ch;
+}
+.talks__item::before {
+  content: counter(talk);
+  position: absolute;
+  inset-inline-start: 0;
+  top: .1rem;
+  font-family: var(--mono);
+  font-size: .8125rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.talks__title { font-size: .9375rem; font-weight: 500; line-height: 1.5; color: var(--fg); }
+.talks__who   { margin-top: .15rem; font-size: .875rem; color: var(--fg-3); }
+
+.talks__item--tbd::before { color: var(--fg-3); }
+.talks__item--tbd .talks__title { color: var(--fg-3); font-style: italic; }
+
 /* ── 비전 영상: 가로 스크롤 레일 ─────────────────────────── */
 
 .vrail { margin-top: clamp(2rem, 4vw, 3rem); }

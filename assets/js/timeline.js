@@ -71,8 +71,8 @@ window.ARRC_TIMELINE = [
   },
   {
     year: '2025',
-    ko: { title: '산학협력 네트워크 확대', desc: '국내외 기업 및 연구기관과의 협력 범위를 넓혔습니다.' },
-    en: { title: 'A wider partner network', desc: 'Broadened collaboration with companies and research institutes at home and abroad.' }
+    ko: { title: 'KAIST 대표연구성과 10선 선정', desc: "'공간을 이어 연결하고, 소통하고, 협력하는 XR' 연구가 KAIST 대표연구성과 10선에 선정되었습니다." },
+    en: { title: 'Named a KAIST top-10 research achievement', desc: 'Research on XR that connects spaces for communication and collaboration was named one of the ten representative achievements of KAIST.' }
   },
   {
     year: '2026',

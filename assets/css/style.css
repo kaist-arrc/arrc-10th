@@ -461,6 +461,109 @@ button:focus-visible,
 .talks__item--tbd::before { color: var(--fg-3); }
 .talks__item--tbd .talks__title { color: var(--fg-3); font-style: italic; }
 
+/* ── 다음 10년 (Symbiotic AIR) ───────────────────────────── */
+
+/* 위아래 섹션과 붙어도 구분되도록 이 섹션만 톤을 따로 쓴다. */
+.next10 {
+  position: relative;
+  background:
+    radial-gradient(80% 60% at 50% 0%, var(--accent-soft) 0%, transparent 60%),
+    var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.model { margin-top: clamp(2rem, 4vw, 3rem); }
+.model__pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(.875rem, 1.6vw, 1.25rem);
+}
+.model__card,
+.model__out {
+  padding: clamp(1.35rem, 2.4vw, 1.9rem);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r-box);
+}
+.model__card h3 { font-size: 1.0625rem; letter-spacing: -.02em; }
+.model__card p  { margin-top: .55rem; color: var(--fg-2); font-size: .9375rem; }
+
+/* 두 모델이 아래 결과로 모인다는 걸 세로선으로만 표시한다. */
+.model__out {
+  position: relative;
+  margin-top: 3rem;
+  border-color: rgba(53, 194, 214, .34);
+  background: linear-gradient(180deg, var(--accent-soft), transparent 70%), var(--bg);
+}
+.model__out::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -3rem;
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+}
+.model__out h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); color: var(--accent); letter-spacing: -.03em; }
+.model__out p  { margin-top: .7rem; max-width: 68ch; color: var(--fg-2); }
+
+.loop__head {
+  margin-top: clamp(2.75rem, 5vw, 4rem);
+  font-size: 1.0625rem;
+  letter-spacing: -.02em;
+}
+.loop {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem .35rem;
+  counter-reset: step;
+}
+.loop li {
+  counter-increment: step;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .5rem .95rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r-ui);
+  font-size: .9375rem;
+  font-weight: 600;
+}
+.loop li::before {
+  content: counter(step);
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.loop__note { margin-top: 1.25rem; max-width: 72ch; color: var(--fg-3); font-size: .9375rem; }
+
+.concepts {
+  margin-top: clamp(2.75rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(.875rem, 1.6vw, 1.25rem);
+}
+.concept {
+  padding: clamp(1.35rem, 2.4vw, 1.9rem);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r-box);
+}
+.concept h3 { font-size: 1.25rem; letter-spacing: -.02em; }
+.concept__sub {
+  margin-top: .4rem;
+  font-family: var(--mono);
+  font-size: .75rem;
+  line-height: 1.6;
+  color: var(--accent);
+  letter-spacing: 0;
+}
+.concept > p:last-child { margin-top: .8rem; color: var(--fg-2); font-size: .9375rem; }
+
 /* ── 비전 영상: 가로 스크롤 레일 ─────────────────────────── */
 
 .vrail { margin-top: clamp(2rem, 4vw, 3rem); }
@@ -897,6 +1000,11 @@ button:focus-visible,
   .foot__cards { grid-template-columns: minmax(0, 1fr); }
 
   /* 좁은 화면에서는 한 줄에 하나씩. 높이는 16:9 로 통일한다. */
+  .model__pair,
+  .concepts { grid-template-columns: minmax(0, 1fr); }
+  .model__out { margin-top: 2.25rem; }
+  .model__out::before { top: -2.25rem; height: 2.25rem; }
+
   .bento { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; }
   .bento__cell { grid-column: 1 / -1 !important; grid-row: auto !important; }
   .bento__frame { aspect-ratio: 16 / 9; flex: none; }

@@ -311,8 +311,9 @@
 
   function setupReveal() {
     // JS 가 동작할 때만 숨겼다가 보여 준다. 스크립트가 실패하면 그냥 다 보인다.
-    var targets = $$('.section__title, .section__note, .facts, .agenda, .vrail, .timeline, ' +
-                     '.bento, .stats, .venue, .register__inner, .orgs__list, .foot__cards');
+    var targets = $$('.section__title, .section__note, .facts, .agenda, .model, .loop, ' +
+                     '.concepts, .vrail, .timeline, .bento, .stats, .venue, ' +
+                     '.register__inner, .orgs__list, .foot__cards');
     if (!targets.length || reduceMotion || !('IntersectionObserver' in window)) return;
 
     targets.forEach(function (t) { t.classList.add('reveal'); });

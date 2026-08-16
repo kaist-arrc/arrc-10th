@@ -61,11 +61,16 @@ window.ARRC_PROGRAM = [
       },
       {
         ko: { title: '인간과 공존하는 로봇을 위한 인간-로봇 협업 데이터/학습 플랫폼', who: '김민아 · KISTI' },
-        en: { title: 'A human-robot collaboration data and learning platform for robots that live alongside people', who: 'Mina Kim · KISTI' }
+        // 영문 표기 근거: IEEE Access 2023, doi 10.1109/access.2023.3314793
+        // "Development of a Digital Twin Pipeline for Interactive Scientific
+        //  Simulation and Mixed Reality Visualization" 의 KISTI 소속 저자.
+        en: { title: 'A human-robot collaboration data and learning platform for robots that live alongside people', who: 'Minah Kim · KISTI' }
       },
       {
         ko: { title: '가상융합(XR-Twin) 기반 건설 피지컬 AI 실증·검증 플랫폼', who: '박형진 · 한국건설기술연구원' },
-        en: { title: 'An XR-Twin platform for testing and validating physical AI in construction', who: 'Hyungjin Park · KICT' }
+        // 영문 표기 근거: KICT ICT융합연구소(ICT Convergence and Integration
+        // Research Institute) 소속으로 실린 2017년 3D 객체 라이브러리 논문.
+        en: { title: 'An XR-Twin platform for testing and validating physical AI in construction', who: 'Hyung-Jin Park · KICT' }
       },
       {
         tbd: true,

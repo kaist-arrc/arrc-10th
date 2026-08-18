@@ -54,7 +54,7 @@
     'about.k.who':   'Who should come',
     'about.v.who':   'XR researchers, industry practitioners, graduate students and anyone curious about the field',
     'about.k.host':  'Host',
-    'about.v.host':  'KAIST KI-ITAIC Augmented Reality Research Center (ARRC)',
+    'about.v.host':  'Augmented Reality Research Center (ARRC), KAIST Institute for IT-AI Convergence',
     'about.k.fee':   'Fee',
     'about.v.fee':   'Free, advance registration required',
     'about.k.ask':   'Contact',
@@ -124,7 +124,7 @@
     'foot.c1.k': 'Research center',
     'foot.c2.k': 'KAIST UVR Lab',
     'foot.c3.k': 'Metaverse Graduate School',
-    'foot.org':  'KAIST Augmented Reality Research Center (ARRC)<br>KI Building (E4), 291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea'
+    'foot.org':  'Augmented Reality Research Center (ARRC), KAIST Institute for IT-AI Convergence<br>KI Building (E4), 291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea'
   };
 
   var TITLE = {

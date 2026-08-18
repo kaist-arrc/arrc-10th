@@ -11,8 +11,7 @@
 
   var CONFIG = {
     // 구글폼 주소. 비워 두면 모든 신청 버튼이 '신청 준비 중'으로 바뀝니다.
-    // TODO: 구글폼 생성 후 주소를 넣어 주세요.
-    REGISTER_URL: '',
+    REGISTER_URL: 'https://docs.google.com/forms/d/e/1FAIpQLSd8D9ULvCywTkZwFrOsDYqjQSAg7ev2zcgp-QwpdtcMgiutRQ/viewform',
 
     // 행사 시작 시각 (KST 기준). 카운트다운이 이 값을 봅니다.
     EVENT_START: '2026-09-01T13:00:00+09:00'

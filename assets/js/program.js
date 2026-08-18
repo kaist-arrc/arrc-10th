@@ -4,12 +4,13 @@
    TODO: 시각은 아직 잠정입니다. 확정 후 이 파일만 수정하면 화면에
          그대로 반영됩니다. HTML/CSS 는 건드릴 필요 없습니다.
 
-   현재 시간 구성
-     환영사 10 + 기조 20 = 30분, 커피 · 단체사진 30분  (합계 60분)
-     초청강연 5건 x 15분 = 75분
-     패널 논의 30분  (초청강연 + 패널 = 105분)
-     포스터 소개 · 전시 40분 (과제별 5분 발표 + 과제 · 논문 포스터)
-     폐회 30분 -> 17:00 종료
+   현재 시간 구성 (17:00 종료 유지)
+     기조 20분 -> ARRC 대표성과 포스터 발표 10분(각 1분) -> 커피 30분
+     초청강연 5개 기관 x 15분 = 75분 (한국한의학연구원 포함)
+     패널 논의 30분 / 포스터 소개 · 전시 40분 / 폐회 20분
+
+   회사소개는 참여 회사가 확정되면 넣습니다(회사당 5분 또는 10분).
+   그 경우 폐회를 줄이거나 종료를 늦춰야 하므로 일정 재배정이 필요합니다.
 
    연사 표기 원칙: ARRC 센터장을 제외한 귀빈은 초청 전이므로
    개인 이름을 쓰지 않고 직위/기관만 적습니다.
@@ -40,13 +41,18 @@ window.ARRC_PROGRAM = [
     en: { title: 'Keynote: AIR4BTS: sharing and transferring experience across time and space', desc: 'Woontack Woo, Director of ARRC' }
   },
   {
-    time: '13:35 - 14:05',
+    time: '13:35 - 13:45',
+    ko: { title: 'ARRC 대표성과 포스터 발표', desc: '포스터당 1분씩 대표 성과를 소개합니다.' },
+    en: { title: 'ARRC highlight posters', desc: 'One-minute introductions of representative results.' }
+  },
+  {
+    time: '13:45 - 14:15',
     kind: 'break',
     ko: { title: '커피 브레이크 · 단체 사진', desc: '로비에서 다과와 함께 단체 사진을 촬영합니다.' },
     en: { title: 'Coffee break and group photo', desc: 'Refreshments in the lobby, followed by a group photo.' }
   },
   {
-    time: '14:05 - 15:20',
+    time: '14:15 - 15:30',
     ko: { title: '초청강연', desc: '강연당 15분, 이후 패널 논의가 이어집니다.' },
     en: { title: 'Invited talks', desc: 'Fifteen minutes per talk, followed by the panel discussion.' },
     // 주제나 연사가 비면 tbd: true 를 주세요. 흐린 글씨로 표시됩니다.
@@ -71,6 +77,11 @@ window.ARRC_PROGRAM = [
       },
       {
         tbd: true,
+        ko: { title: '주제 미정', who: '한국한의학연구원' },
+        en: { title: 'Topic to be announced', who: 'KIOM (Korea Institute of Oriental Medicine)' }
+      },
+      {
+        tbd: true,
         ko: { title: '주제 미정', who: '하태진 · 버넥트' },
         en: { title: 'Topic to be announced', who: 'Taejin Ha · VIRNECT' }
       }
@@ -82,7 +93,7 @@ window.ARRC_PROGRAM = [
     }
   },
   {
-    time: '15:20 - 15:50',
+    time: '15:30 - 16:00',
     ko: {
       title: '패널 논의: ARRC의 차기 10년 과제',
       desc: 'ARRC의 차기 10년 과제 패널 논의를 진행합니다.'
@@ -93,7 +104,7 @@ window.ARRC_PROGRAM = [
     }
   },
   {
-    time: '15:50 - 16:30',
+    time: '16:00 - 16:40',
     ko: {
       title: 'ARRC 연구현황 및 결과 포스터 소개',
       desc: '과제별 5분 발표에 이어 과제 · 논문 포스터를 소개합니다. 다과와 함께 전시를 둘러보세요.'
@@ -104,7 +115,7 @@ window.ARRC_PROGRAM = [
     }
   },
   {
-    time: '16:30 - 17:00',
+    time: '16:40 - 17:00',
     ko: { title: '폐회' },
     en: { title: 'Closing' }
   }

@@ -40,8 +40,8 @@ window.ARRC_PROGRAM = [
   },
   {
     time: '13:15 - 13:35',
-    ko: { title: '기조강연', desc: 'ARRC 센터장 우운택' },
-    en: { title: 'Keynote', desc: 'Woontack Woo, Director of ARRC' }
+    ko: { title: '기조강연: AIR4BTS: 초시공간 경험공유와 전이', desc: 'ARRC 센터장 우운택' },
+    en: { title: 'Keynote: AIR4BTS: sharing and transferring experience across time and space', desc: 'Woontack Woo, Director of ARRC' }
   },
   {
     time: '13:35 - 14:05',
@@ -50,15 +50,11 @@ window.ARRC_PROGRAM = [
     en: { title: 'Coffee break and group photo', desc: 'Refreshments in the lobby, followed by a group photo.' }
   },
   {
-    time: '14:05 - 15:35',
-    ko: { title: '초청강연', desc: '강연당 15분, 이후 토론이 이어집니다.' },
-    en: { title: 'Invited talks', desc: 'Fifteen minutes per talk, followed by a discussion.' },
+    time: '14:05 - 15:00',
+    ko: { title: '초청강연', desc: '강연당 10분, 이후 토론이 이어집니다.' },
+    en: { title: 'Invited talks', desc: 'Ten minutes per talk, followed by a discussion.' },
     // 주제나 연사가 비면 tbd: true 를 주세요. 흐린 글씨로 표시됩니다.
     talks: [
-      {
-        ko: { title: 'AIR4BTS: 초시공간 경험공유와 전이', who: '우운택 · KAIST' },
-        en: { title: 'AIR4BTS: sharing and transferring experience across time and space', who: 'Woontack Woo · KAIST' }
-      },
       {
         ko: { title: '인간과 공존하는 로봇을 위한 인간-로봇 협업 데이터/학습 플랫폼', who: '김민아 · KISTI' },
         // 영문 표기 근거: IEEE Access 2023, doi 10.1109/access.2023.3314793
@@ -79,37 +75,37 @@ window.ARRC_PROGRAM = [
       },
       {
         tbd: true,
+        ko: { title: '주제 미정', who: '한국전자정보통신산업진흥회' },
+        en: { title: 'Topic to be announced', who: 'KEA' }
+      },
+      {
+        tbd: true,
         ko: { title: '주제 미정', who: '하태진 · 버넥트' },
         en: { title: 'Topic to be announced', who: 'Taejin Ha · VIRNECT' }
       }
     ]
   },
   {
-    time: '15:35 - 16:35',
+    time: '15:00 - 15:30',
     ko: {
-      title: '회사소개',
-      desc: '참여 회사 수에 따라 회사당 5분에서 10분씩 진행합니다.'
+      title: '패널 논의: ARRC의 차기 10년 과제',
+      desc: 'ARRC의 차기 10년 과제 패널 논의를 진행합니다.'
     },
     en: {
-      title: 'Company introductions',
-      desc: 'Five to ten minutes per company, depending on how many take part.'
+      title: 'Panel discussion',
+      desc: 'A panel discussion on the next 10-year ARRC research projects.'
     }
   },
   {
-    time: '16:35 - 17:05',
+    time: '15:30 - 16:30',
     ko: {
-      title: '포스터 소개 · 커피 · 전시',
-      desc: '포스터당 1분씩 소개한 뒤, 다과와 함께 전시를 둘러봅니다.'
+      title: 'ARRC 연구현황 및 결과 포스터 소개',
+      desc: '다과와 함께 전시를 둘러봅니다.'
     },
     en: {
-      title: 'Poster lightning talks, coffee and exhibition',
-      desc: 'One minute per poster, then refreshments and time to walk the exhibition.'
+      title: 'ARRC research status and results poster introduction',
+      desc: 'Refreshments and time to walk the exhibition.'
     }
-  },
-  {
-    time: '17:05 - 17:20',
-    ko: { title: '감사패 수여' },
-    en: { title: 'Presentation of appreciation plaques' }
   },
   {
     time: '17:20 - 17:30',

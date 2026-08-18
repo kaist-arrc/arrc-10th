@@ -174,8 +174,11 @@ button:focus-visible,
   gap: 1.5rem;
 }
 
-.brand { display: inline-flex; align-items: baseline; gap: .45rem; flex: none; }
+.brand { display: inline-flex; align-items: center; gap: .55rem; flex: none; }
+.brand__logo { height: 30px; width: auto; }
 .brand__name { font-size: 1.2rem; font-weight: 800; letter-spacing: .04em; }
+/* 배지가 이름 기준선에 붙도록 이름과 배지만 baseline 정렬한다. */
+.brand__name, .brand__badge { align-self: center; }
 .brand__badge {
   font-size: .8rem;
   font-weight: 700;
@@ -331,6 +334,11 @@ button:focus-visible,
 .hero__cta { margin-top: 2.6rem; display: flex; flex-wrap: wrap; gap: .75rem; }
 
 .hero__mark { text-align: center; user-select: none; }
+.mark__logo {
+  height: clamp(44px, 4.6vw, 60px);
+  width: auto;
+  margin: 0 auto 1.4rem;
+}
 .mark {
   font-size: clamp(7rem, 15vw, 13rem);
   font-weight: 800;

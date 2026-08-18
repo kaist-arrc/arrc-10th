@@ -71,6 +71,14 @@ assets/img/orgs/           후원 · 협력 기관 로고
 사진을 교체할 때는 같은 파일명으로 덮어쓰는 게 가장 간단합니다. 다른 이름을
 쓰려면 `gallery.js` / `timeline.js` 의 경로만 바꾸면 됩니다.
 
+## 구글폼 만들기 (참석 · 발표 등록)
+
+`tools/create-google-forms.gs` 를 [script.google.com](https://script.google.com) 새 프로젝트에
+붙여넣고 `createBothForms` 를 실행하면 참석 등록 · 발표 등록 폼 두 개가
+계정에 생성되고, 실행 로그에 응답용/편집용 URL 이 출력됩니다.
+참석 폼의 응답용 URL 을 아래 1번의 `REGISTER_URL` 에 넣으면 끝입니다.
+문의 메일과 마감일은 스크립트 상단 `EVENT` 에서 실행 전에 고쳐 주세요.
+
 ## 자주 고치게 되는 것
 
 ### 1. 참가 신청 구글폼 연결

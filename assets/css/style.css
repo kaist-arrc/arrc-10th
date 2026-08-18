@@ -175,7 +175,7 @@ button:focus-visible,
 }
 
 .brand { display: inline-flex; align-items: center; gap: .55rem; flex: none; }
-.brand__logo { height: 30px; width: auto; }
+.brand__logo { height: 40px; width: auto; }
 .brand__name { font-size: 1.2rem; font-weight: 800; letter-spacing: .04em; }
 /* 배지가 이름 기준선에 붙도록 이름과 배지만 baseline 정렬한다. */
 .brand__name, .brand__badge { align-self: center; }
@@ -334,10 +334,11 @@ button:focus-visible,
 .hero__cta { margin-top: 2.6rem; display: flex; flex-wrap: wrap; gap: .75rem; }
 
 .hero__mark { text-align: center; user-select: none; }
+/* 숫자 10 과 비슷한 폭으로 맞춰 기념 마크처럼 쌓는다. */
 .mark__logo {
-  height: clamp(44px, 4.6vw, 60px);
-  width: auto;
-  margin: 0 auto 1.4rem;
+  width: clamp(190px, 20vw, 285px);
+  height: auto;
+  margin: 0 auto 1.75rem;
 }
 .mark {
   font-size: clamp(7rem, 15vw, 13rem);

@@ -8,8 +8,8 @@
      환영사 10 + 기조 20 = 30분, 커피 · 단체사진 30분  (합계 60분)
      초청강연 5건 x 15분 = 75분
      패널 논의 30분  (초청강연 + 패널 = 105분)
-     포스터 소개 · 전시 60분
-     폐회 10분 -> 17:00 종료
+     포스터 소개 · 전시 40분 (과제별 5분 발표 + 과제 · 논문 포스터)
+     폐회 30분 -> 17:00 종료
 
    연사 표기 원칙: ARRC 센터장을 제외한 귀빈은 초청 전이므로
    개인 이름을 쓰지 않고 직위/기관만 적습니다.
@@ -31,8 +31,8 @@ window.ARRC_PROGRAM = [
   },
   {
     time: '13:05 - 13:15',
-    ko: { title: '환영사', desc: 'KAIST KI 원장, KI-ITAIC 소장' },
-    en: { title: 'Welcome remarks', desc: 'Dean of KAIST KI, Director of KI-ITAIC' }
+    ko: { title: '환영사' },
+    en: { title: 'Welcome remarks' }
   },
   {
     time: '13:15 - 13:35',
@@ -93,18 +93,18 @@ window.ARRC_PROGRAM = [
     }
   },
   {
-    time: '15:50 - 16:50',
+    time: '15:50 - 16:30',
     ko: {
       title: 'ARRC 연구현황 및 결과 포스터 소개',
-      desc: '다과와 함께 전시를 둘러봅니다.'
+      desc: '과제별 5분 발표에 이어 과제 · 논문 포스터를 소개합니다. 다과와 함께 전시를 둘러보세요.'
     },
     en: {
       title: 'ARRC research status and results poster introduction',
-      desc: 'Refreshments and time to walk the exhibition.'
+      desc: 'Five-minute talks per project, followed by project and paper posters over refreshments.'
     }
   },
   {
-    time: '16:50 - 17:00',
+    time: '16:30 - 17:00',
     ko: { title: '폐회' },
     en: { title: 'Closing' }
   }

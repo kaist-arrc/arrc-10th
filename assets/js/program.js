@@ -71,11 +71,6 @@ window.ARRC_PROGRAM = [
       },
       {
         tbd: true,
-        ko: { title: '주제 미정', who: '한국전자정보통신산업진흥회' },
-        en: { title: 'Topic to be announced', who: 'KEA' }
-      },
-      {
-        tbd: true,
         ko: { title: '주제 미정', who: '하태진 · 버넥트' },
         en: { title: 'Topic to be announced', who: 'Taejin Ha · VIRNECT' }
       }

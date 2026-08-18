@@ -4,16 +4,12 @@
    TODO: 시각은 아직 잠정입니다. 확정 후 이 파일만 수정하면 화면에
          그대로 반영됩니다. HTML/CSS 는 건드릴 필요 없습니다.
 
-   전달받은 시간 배분 (블록별 상한)
-     환영사 ~ 기조강연 20-30분, 커피 · 사진까지 합쳐 60분 이내
-       -> 환영사 10 + 기조 20 = 30, 커피 · 사진 30, 합계 60
-     초청강연 각 15분, 토론 포함 90분 이내
-       -> 5개 기관 x 15분 + 토론 15분 = 90
-     회사소개 회사당 5-10분, 총 60분
-     포스터 소개 각 1분, 커피 · 전시 포함 30분
-
-   참여 기관과 회사 수가 확정되면 회사소개 · 포스터 시간을 그 안에서
-   나누면 되고, 블록 전체 길이는 그대로 유지됩니다.
+   현재 시간 구성
+     환영사 10 + 기조 20 = 30분, 커피 · 단체사진 30분  (합계 60분)
+     초청강연 5건 x 15분 = 75분
+     패널 논의 30분  (초청강연 + 패널 = 105분)
+     포스터 소개 · 전시 60분
+     폐회 10분 -> 17:00 종료
 
    연사 표기 원칙: ARRC 센터장을 제외한 귀빈은 초청 전이므로
    개인 이름을 쓰지 않고 직위/기관만 적습니다.
@@ -50,9 +46,9 @@ window.ARRC_PROGRAM = [
     en: { title: 'Coffee break and group photo', desc: 'Refreshments in the lobby, followed by a group photo.' }
   },
   {
-    time: '14:05 - 15:00',
-    ko: { title: '초청강연', desc: '강연당 10분, 이후 토론이 이어집니다.' },
-    en: { title: 'Invited talks', desc: 'Ten minutes per talk, followed by a discussion.' },
+    time: '14:05 - 15:20',
+    ko: { title: '초청강연', desc: '강연당 15분, 이후 패널 논의가 이어집니다.' },
+    en: { title: 'Invited talks', desc: 'Fifteen minutes per talk, followed by the panel discussion.' },
     // 주제나 연사가 비면 tbd: true 를 주세요. 흐린 글씨로 표시됩니다.
     talks: [
       {
@@ -86,7 +82,7 @@ window.ARRC_PROGRAM = [
     ]
   },
   {
-    time: '15:00 - 15:30',
+    time: '15:20 - 15:50',
     ko: {
       title: '패널 논의: ARRC의 차기 10년 과제',
       desc: 'ARRC의 차기 10년 과제 패널 논의를 진행합니다.'
@@ -97,7 +93,7 @@ window.ARRC_PROGRAM = [
     }
   },
   {
-    time: '15:30 - 16:30',
+    time: '15:50 - 16:50',
     ko: {
       title: 'ARRC 연구현황 및 결과 포스터 소개',
       desc: '다과와 함께 전시를 둘러봅니다.'
@@ -108,7 +104,7 @@ window.ARRC_PROGRAM = [
     }
   },
   {
-    time: '17:20 - 17:30',
+    time: '16:50 - 17:00',
     ko: { title: '폐회' },
     en: { title: 'Closing' }
   }

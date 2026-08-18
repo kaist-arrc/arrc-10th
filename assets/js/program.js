@@ -7,7 +7,7 @@
    현재 시간 구성 (17:00 종료 유지)
      기조 20분 -> ARRC 대표성과 포스터 발표 10분(각 1분) -> 커피 30분
      초청강연 5개 기관 x 15분 = 75분 (한국한의학연구원 포함)
-     패널 논의 30분 / 포스터 소개 · 전시 40분 / 폐회 20분
+     패널 논의 30분 / 자유 네트워킹(포스터 전시) 40분 / 폐회 20분
 
    회사소개는 참여 회사가 확정되면 넣습니다(회사당 5분 또는 10분).
    그 경우 폐회를 줄이거나 종료를 늦춰야 하므로 일정 재배정이 필요합니다.
@@ -106,12 +106,12 @@ window.ARRC_PROGRAM = [
   {
     time: '16:00 - 16:40',
     ko: {
-      title: 'ARRC 연구현황 및 결과 포스터 소개',
-      desc: '과제별 5분 발표에 이어 과제 · 논문 포스터를 소개합니다. 다과와 함께 전시를 둘러보세요.'
+      title: '자유 네트워킹',
+      desc: '다과와 함께 포스터 전시를 둘러보며 자유롭게 교류합니다. 데모 · 포스터 참여를 원하는 기관은 별도로 연락해 주세요.'
     },
     en: {
-      title: 'ARRC research status and results poster introduction',
-      desc: 'Five-minute talks per project, followed by project and paper posters over refreshments.'
+      title: 'Open networking',
+      desc: 'Posters stay on display over refreshments. Organizations interested in presenting a demo or poster should contact us separately.'
     }
   },
   {

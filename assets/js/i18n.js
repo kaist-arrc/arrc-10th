@@ -58,6 +58,7 @@
     'about.k.fee':   'Fee',
     'about.v.fee':   'Free, advance registration required',
     'about.k.ask':   'Contact',
+    'about.v.ask':   '<a href="mailto:yoon-jh@kaist.ac.kr">yoon-jh@kaist.ac.kr</a>',
 
     'program.title': 'Program',
     'program.note':  'The schedule below is provisional and may change. Some talks are still awaiting a confirmed topic or speaker.',

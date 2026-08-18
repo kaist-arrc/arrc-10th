@@ -68,6 +68,10 @@
           talkList.appendChild(li);
         });
         body.appendChild(talkList);
+        if (row.talksNote) {
+          var note = row.talksNote[lang] || row.talksNote.ko;
+          body.appendChild(el('p', 'talks__note', note));
+        }
       }
 
       item.appendChild(body);

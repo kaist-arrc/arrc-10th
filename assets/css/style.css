@@ -469,6 +469,13 @@ button:focus-visible,
 .talks__title { font-size: .9375rem; font-weight: 500; line-height: 1.5; color: var(--fg); }
 .talks__who   { margin-top: .15rem; font-size: .875rem; color: var(--fg-3); }
 
+.talks__note {
+  margin-top: .9rem;
+  padding-inline-start: 2rem;
+  font-size: .8125rem;
+  color: var(--fg-3);
+}
+
 .talks__item--tbd::before { color: var(--fg-3); }
 .talks__item--tbd .talks__title { color: var(--fg-3); font-style: italic; }
 

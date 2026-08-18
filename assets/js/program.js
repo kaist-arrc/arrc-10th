@@ -79,7 +79,12 @@ window.ARRC_PROGRAM = [
         ko: { title: '주제 미정', who: '하태진 · 버넥트' },
         en: { title: 'Topic to be announced', who: 'Taejin Ha · VIRNECT' }
       }
-    ]
+    ],
+    // 목록 아래에 붙는 안내 문구
+    talksNote: {
+      ko: '초청강연은 사정에 따라 추가되거나 변경될 수 있습니다.',
+      en: 'Invited talks may be added or changed.'
+    }
   },
   {
     time: '15:20 - 15:50',

@@ -175,18 +175,19 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
 
 /* ── 하단: 주최 · 후원 ───────────────────────────────────── */
 .orgs { margin-top: 12mm; padding-top: 9mm; border-top: 0.5mm solid var(--line); }
-.orgs__row { display: flex; align-items: center; gap: 12mm; }
+.orgs__row { display: flex; align-items: center; gap: 11mm; flex-wrap: nowrap; }
 .orgs__row + .orgs__row { margin-top: 8mm; }
 .orgs__k {
   font-size: 5.2mm;
   font-weight: 800;
   letter-spacing: 0.16em;
   color: var(--fg-3);
-  width: 42mm;
+  width: 60mm;
   flex: none;
+  white-space: nowrap;
 }
 .orgs__row img { height: 22mm; width: auto; }
-.orgs__row--sm img { height: 15mm; }
+.orgs__row--sm img { height: 22mm; }
 
 /* ── 화면 미리보기: 축소해서 가운데 ─────────────────────── */
 @media screen {

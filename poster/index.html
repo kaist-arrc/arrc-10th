@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홍보 포스터 | KAIST ARRC 10주년 기념 심포지엄</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ============================================================
+   A1 (594 x 841mm) 홍보 포스터.
+   화면에서는 축소 미리보기로 보이고, 브라우저 인쇄(Ctrl+P)에서
+   용지를 A1 으로 고르면 그대로 인쇄용 PDF 가 됩니다.
+   색은 본 사이트 style.css 의 :root 토큰과 같은 값입니다.
+   ============================================================ */
+
+:root {
+  --bg:      #F7F6F3;
+  --surface: #FFFFFF;
+  --line:    rgba(27, 29, 33, .12);
+  --fg:      #1B1D21;
+  --fg-2:    #494E56;
+  --fg-3:    #63686F;
+  --accent:  #C6410F;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: "Pretendard Variable", Pretendard, -apple-system, system-ui, "Malgun Gothic", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { background: #DAD8D2; font-family: var(--sans); }
+
+/* ── 포스터 본체: 실제 A1 크기 ──────────────────────────── */
+.poster {
+  width: 594mm;
+  height: 841mm;
+  background: var(--bg);
+  color: var(--fg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 26mm 30mm 22mm;
+  letter-spacing: -0.01em;
+}
+
+/* 히어로와 같은 원근 그리드. 하단에 얕게 깐다. */
+.poster::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -6%;
+  height: 46%;
+  background-image:
+    linear-gradient(to right,  var(--line) 0.6mm, transparent 0.6mm),
+    linear-gradient(to bottom, var(--line) 0.6mm, transparent 0.6mm);
+  background-size: 34mm 34mm;
+  transform: perspective(600mm) rotateX(58deg);
+  transform-origin: bottom center;
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 100%, #000 0%, transparent 74%);
+          mask-image: radial-gradient(120% 90% at 50% 100%, #000 0%, transparent 74%);
+  pointer-events: none;
+}
+
+.poster > * { position: relative; }
+
+/* ── 상단: 행사명 스트립 ─────────────────────────────────── */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8mm;
+  border-bottom: 0.8mm solid var(--fg);
+}
+.top__event { font-size: 13.5mm; font-weight: 800; letter-spacing: -0.02em; }
+.top__host  { font-size: 6.5mm; color: var(--fg-2); text-align: right; line-height: 1.45; }
+
+/* ── 마크: 로고 + 10 + 연도 ──────────────────────────────── */
+.mark { text-align: center; margin-top: 16mm; }
+.mark img { width: 122mm; height: auto; }
+.mark__num {
+  font-size: 152mm;
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  margin-top: 6mm;
+}
+.mark__num span { color: var(--accent); }
+.mark__years {
+  font-family: var(--mono);
+  font-size: 10mm;
+  letter-spacing: 0.24em;
+  color: var(--fg-3);
+  margin-top: 8mm;
+}
+
+/* ── 제목 ────────────────────────────────────────────────── */
+.title {
+  text-align: center;
+  margin-top: 15mm;
+  font-size: 30mm;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+.title small { display: block; font-size: 11.5mm; font-weight: 600; color: var(--fg-2); margin-top: 6mm; letter-spacing: -0.01em; }
+
+/* ── 일시 · 장소 ─────────────────────────────────────────── */
+.when {
+  margin-top: 12mm;
+  display: flex;
+  justify-content: center;
+  gap: 14mm;
+  font-size: 10.5mm;
+  font-weight: 700;
+}
+.when i { font-style: normal; color: var(--accent); margin-right: 3mm; }
+
+/* ── 프로그램 ────────────────────────────────────────────── */
+.program {
+  margin-top: 13mm;
+  background: var(--surface);
+  border: 0.5mm solid var(--line);
+  border-radius: 6mm;
+  padding: 12mm 15mm;
+}
+.program h2 {
+  font-size: 8mm;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 6mm;
+}
+.program table { width: 100%; border-collapse: collapse; }
+.program td {
+  padding: 4.4mm 0;
+  border-bottom: 0.35mm solid var(--line);
+  font-size: 7.9mm;
+  vertical-align: top;
+}
+.program tr:last-child td { border-bottom: 0; }
+.program td.t {
+  font-family: var(--mono);
+  color: var(--accent);
+  width: 34mm;
+  font-size: 7.2mm;
+  padding-top: 5mm;
+}
+.program td strong { font-weight: 700; }
+.program td .sub { color: var(--fg-3); font-size: 6.6mm; }
+
+/* ── QR + 신청 ───────────────────────────────────────────── */
+.act {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 14mm;
+}
+.act__lead { flex: 1; }
+.act__lead h2 { font-size: 12mm; font-weight: 800; letter-spacing: -0.02em; }
+.act__lead p  { font-size: 7mm; color: var(--fg-2); margin-top: 3.5mm; line-height: 1.5; }
+.act__lead .url { font-family: var(--mono); font-size: 6.6mm; color: var(--accent); margin-top: 4.5mm; display: block; }
+.qr {
+  text-align: center;
+  background: var(--surface);
+  border: 0.5mm solid var(--line);
+  border-radius: 5mm;
+  padding: 7mm 9mm 5.5mm;
+}
+.qr img { width: 52mm; height: 52mm; display: block; }
+.qr b { display: block; font-size: 5.8mm; margin-top: 3.5mm; font-weight: 700; }
+
+/* ── 하단: 주최 · 후원 ───────────────────────────────────── */
+.orgs { margin-top: 12mm; padding-top: 8mm; border-top: 0.5mm solid var(--line); }
+.orgs__row { display: flex; align-items: center; gap: 10mm; }
+.orgs__row + .orgs__row { margin-top: 6mm; }
+.orgs__k {
+  font-size: 5.2mm;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--fg-3);
+  width: 42mm;
+  flex: none;
+}
+.orgs__row img { height: 13mm; width: auto; }
+.orgs__row--sm img { height: 9.5mm; }
+
+/* ── 화면 미리보기: 축소해서 가운데 ─────────────────────── */
+@media screen {
+  body { display: grid; place-items: center; min-height: 100vh; padding: 24px; }
+  .stage { transform-origin: top left; }
+  .hint {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    background: #1B1D21; color: #F7F6F3;
+    font-size: 13px; text-align: center; padding: 9px;
+    font-family: var(--sans);
+  }
+  .hint b { color: #FFB38A; }
+}
+
+@media print {
+  html, body { background: none; }
+  .stage { transform: none !important; }
+  .hint { display: none; }
+  @page { size: 594mm 841mm; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+<div class="poster">
+
+  <header class="top">
+    <div class="top__event">KAIST ARRC 10주년 기념 심포지엄</div>
+    <div class="top__host">주최 · 주관<br>KAIST IT-AI융합 연구소 증강현실연구센터</div>
+  </header>
+
+  <div class="mark">
+    <img src="../assets/img/logo-arrc.png?v=2" alt="KAIST ARRC">
+    <div class="mark__num">1<span>0</span></div>
+    <div class="mark__years">2016 - 2026</div>
+  </div>
+
+  <h1 class="title">
+    증강현실 연구 중심 10년,<br>다음 10년을 열다
+    <small>공간을 연결하던 XR에서, 경험을 이해하고 공유하는 Symbiotic AIR로</small>
+  </h1>
+
+  <div class="when">
+    <span><i>일시</i>2026. 9. 1. (화) 13:00 - 17:00</span>
+    <span><i>장소</i>KAIST KI빌딩(E4) 2층 매트릭스홀</span>
+  </div>
+
+  <section class="program">
+    <h2>PROGRAM</h2>
+    <table>
+      <tr><td class="t">12:30</td><td>등록</td></tr>
+      <tr><td class="t">13:00</td><td>개회사 · 환영사</td></tr>
+      <tr><td class="t">13:15</td><td><strong>기조강연</strong> AIR4BTS: 초시공간 경험공유와 전이 <span class="sub">우운택 (ARRC 센터장)</span></td></tr>
+      <tr><td class="t">13:35</td><td>커피 브레이크 · 단체 사진</td></tr>
+      <tr><td class="t">14:05</td><td><strong>초청강연</strong> <span class="sub">KISTI · 한국건설기술연구원 · ETRI · KEA · 버넥트</span></td></tr>
+      <tr><td class="t">15:20</td><td><strong>패널 논의</strong> ARRC의 차기 10년 과제</td></tr>
+      <tr><td class="t">15:50</td><td>ARRC 연구현황 · 논문 포스터 소개 및 전시</td></tr>
+      <tr><td class="t">16:30</td><td>폐회</td></tr>
+    </table>
+  </section>
+
+  <section class="act">
+    <div class="act__lead">
+      <h2>참가 신청</h2>
+      <p>참가비 무료 · 사전 등록 필수<br>문의 윤정혁 팀장 · yoon-jh@kaist.ac.kr</p>
+      <span class="url">kaist-arrc.github.io/arrc-10th</span>
+    </div>
+    <div class="qr">
+      <img src="qr-register.png" alt="참가 신청 QR 코드">
+      <b>참가 신청</b>
+    </div>
+    <div class="qr">
+      <img src="qr-site.png" alt="행사 홈페이지 QR 코드">
+      <b>행사 안내</b>
+    </div>
+  </section>
+
+  <footer class="orgs">
+    <div class="orgs__row">
+      <span class="orgs__k">HOSTED BY</span>
+      <img src="../assets/img/logo-arrc.png?v=2" alt="ARRC">
+      <img src="../assets/img/logo-kaist.png" alt="KAIST">
+      <img src="../assets/img/logo-uvr.png" alt="KAIST UVR Lab">
+    </div>
+    <div class="orgs__row orgs__row--sm">
+      <span class="orgs__k">SUPPORTED BY</span>
+      <img src="../assets/img/orgs/msit.png" alt="과학기술정보통신부">
+      <img src="../assets/img/orgs/motie.png" alt="산업통상자원부">
+      <img src="../assets/img/orgs/daejeon.png" alt="대전광역시">
+      <img src="../assets/img/orgs/iitp.png" alt="IITP">
+      <img src="../assets/img/orgs/kiat.png" alt="KIAT">
+      <img src="../assets/img/orgs/dicia.png" alt="DICIA">
+    </div>
+  </footer>
+
+</div>
+</div>
+
+<p class="hint">인쇄용 PDF: <b>Ctrl+P</b> → 대상 "PDF로 저장" → 용지 크기 <b>A1</b> → 여백 없음 · 배경 그래픽 켜기</p>
+
+<script>
+// 화면에서만: A1 을 창에 맞게 축소한다. 인쇄에는 영향이 없다.
+(function () {
+  var stage = document.getElementById('stage');
+  function fit() {
+    var mmToPx = 96 / 25.4;
+    var w = 594 * mmToPx, h = 841 * mmToPx;
+    var s = Math.min((innerWidth - 48) / w, (innerHeight - 88) / h);
+    stage.style.transform = 'scale(' + Math.min(s, 1) + ')';
+    stage.style.height = (h * Math.min(s, 1)) + 'px';
+    stage.style.width = (w * Math.min(s, 1)) + 'px';
+  }
+  addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</body>
+</html>

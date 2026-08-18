@@ -27,11 +27,11 @@
     'cta.register': 'Register',
     'cta.program':  'See the program',
 
-    'hero.title': 'Ten years at the centre of AR.<br>Opening the next ten.',
+    'hero.title': 'Ten years at the center of AR.<br>Opening the next ten.',
     'hero.sub':   'The KAIST Augmented Reality Research Center looks back on a decade of work and sets the direction for the next one.',
 
     'meta.dateLabel':  'Date',
-    'meta.date':       'Tue 1 Sep 2026, 13:00',
+    'meta.date':       'Tue, Sep 1, 2026, 13:00',
     'meta.venueLabel': 'Venue',
     'meta.venue':      'Matrix Hall, 2F, KI Building (E4), KAIST',
 
@@ -46,9 +46,9 @@
     'about.k.name':  'Event',
     'about.v.name':  'KAIST ARRC 10th Anniversary Symposium',
     'about.k.theme': 'Theme',
-    'about.v.theme': 'Ten years at the centre of AR research, opening the next ten',
+    'about.v.theme': 'Ten years at the center of AR research, opening the next ten',
     'about.k.when':  'Date',
-    'about.v.when':  'Tuesday 1 September 2026, 13:00 - 17:00',
+    'about.v.when':  'Tuesday, September 1, 2026, 13:00 - 17:00',
     'about.k.where': 'Venue',
     'about.v.where': 'Matrix Hall, 2F, KI Building (E4), KAIST · 291 Daehak-ro, Yuseong-gu, Daejeon',
     'about.k.who':   'Who should come',
@@ -68,7 +68,7 @@
     'n10.pwm.k': 'Physical World Model',
     'n10.pwm.v': 'Understands the state of the physical world and how it changes.',
     'n10.swm.k': 'Social World Model',
-    'n10.swm.v': 'Understands human behaviour, relationships, intent and situation.',
+    'n10.swm.v': 'Understands human behavior, relationships, intent and situation.',
     'n10.out.k': 'Symbiotic AIR',
     'n10.out.v': 'Connecting both models to understand and anticipate reality and people together. The aim is to widen AI from a technology that replaces people into Augmented Humanity, which extends human experience and ability and evolves alongside us.',
     'n10.loopHead': 'The loop that turns experience into intelligence',
@@ -120,7 +120,7 @@
 
     'reg.title':    'Join us',
     'reg.body':     'Seating is limited, so please register in advance. Confirmation emails go out on a rolling basis.',
-    'reg.deadline': 'Registration closes Monday 25 August 2026, 18:00',
+    'reg.deadline': 'Registration closes Monday, August 25, 2026, 18:00',
 
     'foot.c1.k': 'Research center',
     'foot.c2.k': 'KAIST UVR Lab',

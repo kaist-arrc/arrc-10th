@@ -175,7 +175,6 @@ REGISTER_URL: 'https://forms.gle/xxxxxxxx',
 - [ ] **초안 표시 제거** - 내용이 확정되면 세 곳을 함께 지웁니다.
   `index.html` 상단의 `<aside class="draft">`, head 의 `robots` meta,
   그리고 `robots.txt` 의 `Disallow: /`
-- [ ] **문의 이메일** - `index.html` 의 `arrc@kaist.ac.kr` 을 실제 행사 담당 주소로 교체
 - [ ] **프로그램** - `program.js` 전체가 잠정안입니다. 확정 일정과 연사로 교체
 - [ ] **연혁** - `timeline.js` 는 ARRC 공개 자료를 바탕으로 재구성한 예시입니다.
       센터 공식 연혁으로 검수 후 교체 (2016 콜로퀴엄, 2025 대표연구성과 10선은

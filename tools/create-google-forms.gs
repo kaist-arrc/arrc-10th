@@ -18,7 +18,7 @@ var EVENT = {
   name: 'KAIST ARRC 10주년 기념 심포지엄',
   date: '2026년 9월 1일(화) 13:00 - 17:30',
   venue: 'KAIST KI빌딩(E4) 2층 매트릭스홀',
-  contact: 'arrc@kaist.ac.kr',          // TODO: 행사 담당 메일 확정 시 교체
+  contact: 'kkr82@kaist.ac.kr',
   deadline: '2026년 8월 25일(월) 18:00'  // TODO: 마감일 확정 시 교체
 };
 

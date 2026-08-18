@@ -79,10 +79,10 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
 .top__host  { font-size: 6.5mm; color: var(--fg-2); text-align: right; line-height: 1.45; }
 
 /* ── 마크: 로고 + 10 + 연도 ──────────────────────────────── */
-.mark { text-align: center; margin-top: 16mm; }
-.mark img { width: 122mm; height: auto; }
+.mark { text-align: center; margin-top: 10mm; }
+.mark img { width: 104mm; height: auto; }
 .mark__num {
-  font-size: 152mm;
+  font-size: 128mm;
   font-weight: 800;
   line-height: 0.82;
   letter-spacing: -0.06em;
@@ -94,23 +94,23 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
   font-size: 10mm;
   letter-spacing: 0.24em;
   color: var(--fg-3);
-  margin-top: 8mm;
+  margin-top: 6mm;
 }
 
 /* ── 제목 ────────────────────────────────────────────────── */
 .title {
   text-align: center;
-  margin-top: 15mm;
-  font-size: 30mm;
+  margin-top: 11mm;
+  font-size: 28mm;
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -0.035em;
 }
-.title small { display: block; font-size: 11.5mm; font-weight: 600; color: var(--fg-2); margin-top: 6mm; letter-spacing: -0.01em; }
+.title small { display: block; font-size: 11mm; font-weight: 600; color: var(--fg-2); margin-top: 6mm; letter-spacing: -0.01em; }
 
 /* ── 일시 · 장소 ─────────────────────────────────────────── */
 .when {
-  margin-top: 12mm;
+  margin-top: 10mm;
   display: flex;
   justify-content: center;
   gap: 14mm;
@@ -121,11 +121,11 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
 
 /* ── 프로그램 ────────────────────────────────────────────── */
 .program {
-  margin-top: 13mm;
+  margin-top: 10mm;
   background: var(--surface);
   border: 0.5mm solid var(--line);
   border-radius: 6mm;
-  padding: 12mm 15mm;
+  padding: 10mm 15mm;
 }
 .program h2 {
   font-size: 8mm;
@@ -136,7 +136,7 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
 }
 .program table { width: 100%; border-collapse: collapse; }
 .program td {
-  padding: 4.4mm 0;
+  padding: 3.6mm 0;
   border-bottom: 0.35mm solid var(--line);
   font-size: 7.9mm;
   vertical-align: top;
@@ -151,6 +151,48 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
 }
 .program td strong { font-weight: 700; }
 .program td .sub { color: var(--fg-3); font-size: 6.6mm; }
+
+/* ── 비전 밴드: 홈페이지 '다음 10년' 다이어그램의 압축판 ── */
+.vision {
+  margin-top: 10mm;
+  background: var(--surface);
+  border: 0.5mm solid rgba(198, 65, 15, .35);
+  border-radius: 6mm;
+  padding: 10mm 14mm 11mm;
+}
+.vision h2 {
+  font-size: 8mm;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+.vision__flow {
+  margin-top: 7mm;
+  display: flex;
+  align-items: stretch;
+  gap: 6mm;
+}
+.vision__box {
+  flex: 1;
+  border: 0.4mm solid var(--line);
+  border-radius: 4mm;
+  padding: 6mm 7mm;
+}
+.vision__box b { display: block; font-size: 7.6mm; letter-spacing: -0.02em; }
+.vision__box p { font-size: 5.9mm; color: var(--fg-2); margin-top: 2mm; line-height: 1.45; }
+.vision__box--out {
+  flex: 1.5;
+  border-color: rgba(198, 65, 15, .4);
+  background: linear-gradient(180deg, rgba(198, 65, 15, .06), transparent 70%);
+}
+.vision__box--out b { color: var(--accent); }
+.vision__op {
+  align-self: center;
+  font-size: 10mm;
+  font-weight: 700;
+  color: var(--fg-3);
+  flex: none;
+}
 
 /* ── QR + 신청 ───────────────────────────────────────────── */
 .act {
@@ -174,7 +216,7 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
 .qr b { display: block; font-size: 5.8mm; margin-top: 3.5mm; font-weight: 700; }
 
 /* ── 하단: 주최 · 후원 ───────────────────────────────────── */
-.orgs { margin-top: 12mm; padding-top: 9mm; border-top: 0.5mm solid var(--line); }
+.orgs { margin-top: 10mm; padding-top: 8mm; border-top: 0.5mm solid var(--line); }
 .orgs__row { display: flex; align-items: center; gap: 11mm; flex-wrap: nowrap; }
 .orgs__row + .orgs__row { margin-top: 8mm; }
 .orgs__k {
@@ -248,6 +290,26 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
       <tr><td class="t">15:50</td><td>ARRC 연구현황 · 논문 포스터 소개 및 전시</td></tr>
       <tr><td class="t">16:30</td><td>폐회</td></tr>
     </table>
+  </section>
+
+  <section class="vision">
+    <h2>NEXT 10 YEARS &mdash; SYMBIOTIC AIR</h2>
+    <div class="vision__flow">
+      <div class="vision__box">
+        <b>Physical World Model</b>
+        <p>물리 세계의 상태와 변화를 이해</p>
+      </div>
+      <div class="vision__op">+</div>
+      <div class="vision__box">
+        <b>Social World Model</b>
+        <p>인간의 행동 · 관계 · 의도 · 상황을 이해</p>
+      </div>
+      <div class="vision__op">&rarr;</div>
+      <div class="vision__box vision__box--out">
+        <b>Symbiotic AIR</b>
+        <p>현실과 인간을 함께 이해하고 예측해, 인간의 경험과 능력을 증강하는 Augmented Humanity 로</p>
+      </div>
+    </div>
   </section>
 
   <section class="act">

@@ -5,7 +5,7 @@
          그대로 반영됩니다. HTML/CSS 는 건드릴 필요 없습니다.
 
    현재 시간 구성 (17:00 종료 유지)
-     기조 20분 -> ARRC 대표성과 포스터 발표 10분(각 1분) -> 커피 30분
+     기조 20분 -> ARRC 수행 프로젝트 발표 10분(각 1분) -> 커피 30분
      초청강연 5개 기관 x 15분 = 75분 (한국한의학연구원 포함)
      패널 논의 30분 / 자유 네트워킹(포스터 전시) 40분 / 폐회 20분
 
@@ -42,8 +42,8 @@ window.ARRC_PROGRAM = [
   },
   {
     time: '13:35 - 13:45',
-    ko: { title: 'ARRC 대표성과 포스터 발표', desc: '포스터당 1분씩 대표 성과를 소개합니다.' },
-    en: { title: 'ARRC highlight posters', desc: 'One-minute introductions of representative results.' }
+    ko: { title: 'ARRC 수행 프로젝트 발표', desc: '프로젝트당 1분씩 대표 성과를 소개합니다.' },
+    en: { title: 'ARRC project highlights', desc: 'One-minute introductions of each project.' }
   },
   {
     time: '13:45 - 14:15',

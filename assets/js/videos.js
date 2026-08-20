@@ -21,11 +21,6 @@ window.ARRC_VIDEOS = [
     en: { title: 'Meta-Daejeon concept film', channel: 'KAIST Metaverse Graduate School' }
   },
   {
-    id: 'FMn-idxyj4I',
-    ko: { title: '메타뮤지엄: 시공간을 넘는 미술관 경험', channel: 'KAIST 메타버스대학원' },
-    en: { title: 'Meta-Museum: museum experience across space and time', channel: 'KAIST Metaverse Graduate School' }
-  },
-  {
     id: '-6tqLN9YHNc',
     ko: { title: '메타버스 기술로 그리는 대전', channel: 'KBS 대전' },
     en: { title: 'Reimagining Daejeon with metaverse technology', channel: 'KBS Daejeon' }

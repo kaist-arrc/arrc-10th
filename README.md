@@ -159,6 +159,23 @@ REGISTER_URL: 'https://forms.gle/xxxxxxxx',
 `assets/css/style.css` 맨 위 `:root` 블록의 토큰만 바꾸면 전체에 반영됩니다.
 `--accent` 하나가 버튼, 링크, 연도 표시, 타임라인 점을 모두 담당합니다.
 
+## 방문자 통계 (Google Analytics)
+
+`index.html` 과 `poster/index.html` 에 GA 로더가 들어 있습니다.
+`GA_ID` 가 비어 있는 동안은 아무것도 로드하지 않습니다.
+
+켜는 방법:
+
+1. [analytics.google.com](https://analytics.google.com) 접속 (구글폼과 같은 계정이면 됩니다)
+2. 관리 → 계정 만들기 → 속성 만들기 (이름 예: ARRC 10주년)
+3. 플랫폼 "웹" 선택, URL 에 `kaist-arrc.github.io` 입력
+4. 발급된 **측정 ID (G-로 시작)** 를 복사
+5. 두 파일에서 `var GA_ID = '';` 를 찾아 따옴표 안에 붙여넣기
+
+반영되면 실시간 접속, 일별 방문자, 유입 경로(직접/검색/SNS), 지역
+분포를 볼 수 있습니다. 포스터 QR 유입을 따로 세고 싶으면 QR 에 넣는
+주소를 `.../?utm_source=poster` 로 바꾸면 유입 경로에 poster 로 잡힙니다.
+
 ## 배포 (GitHub Pages)
 
 1. 이 저장소를 GitHub 에 올립니다.

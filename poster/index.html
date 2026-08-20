@@ -251,6 +251,25 @@ html, body { background: #DAD8D2; font-family: var(--sans); }
   @page { size: 594mm 841mm; margin: 0; }
 }
 </style>
+
+<!-- ── 방문자 통계 (Google Analytics 4) ─────────────────────
+     아래 GA_ID 에 측정 ID(G-로 시작)를 넣으면 켜지고, 비워 두면
+     아무것도 로드하지 않습니다. 발급 방법은 README 참고. -->
+<script>
+(function () {
+  var GA_ID = '';   // 예: 'G-XXXXXXXXXX'
+  if (!GA_ID) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+})();
+</script>
 </head>
 <body>
 

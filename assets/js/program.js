@@ -20,6 +20,11 @@
 
 window.ARRC_PROGRAM = [
   {
+    time: '12:00 - 13:00',
+    ko: { title: 'XR 산업인재 교육 간담회', desc: '초청자만 참석하는 비공개 간담회입니다.' },
+    en: { title: 'Roundtable on XR industry talent education', desc: 'Closed-door session, by invitation only.' }
+  },
+  {
     time: '12:30 - 13:00',
     kind: 'break',
     ko: { title: '등록', desc: '매트릭스홀 앞 접수 데스크에서 명찰을 수령해 주세요.' },

@@ -60,30 +60,27 @@ window.ARRC_PROGRAM = [
       {
         ko: { title: '인간과 공존하는 로봇을 위한 인간-로봇 협업 데이터/학습 플랫폼', who: '김민아 · KISTI' },
         // 영문 표기 근거: IEEE Access 2023, doi 10.1109/access.2023.3314793
-        // "Development of a Digital Twin Pipeline for Interactive Scientific
-        //  Simulation and Mixed Reality Visualization" 의 KISTI 소속 저자.
         en: { title: 'A human-robot collaboration data and learning platform for robots that live alongside people', who: 'Minah Kim · KISTI' }
       },
       {
         ko: { title: '가상융합(XR-Twin) 기반 건설 피지컬 AI 실증·검증 플랫폼', who: '박형진 · 한국건설기술연구원' },
-        // 영문 표기 근거: KICT ICT융합연구소(ICT Convergence and Integration
-        // Research Institute) 소속으로 실린 2017년 3D 객체 라이브러리 논문.
+        // 영문 표기 근거: KICT ICT융합연구소 소속 2017년 3D 객체 라이브러리 논문
         en: { title: 'An XR-Twin platform for testing and validating physical AI in construction', who: 'Hyung-Jin Park · KICT' }
       },
       {
-        tbd: true,
-        ko: { title: '주제 미정', who: 'ETRI' },
-        en: { title: 'Topic to be announced', who: 'ETRI' }
+        ko: { title: 'Symbiotic AIR와 한의학이 만나는 미래 헬스케어', who: '도준형 · 한국한의학연구원' },
+        // 영문 표기 근거: OpenAlex 저자 Jun-Hyeong Do (한국한의학연구원 소속, 72편)
+        en: { title: 'Future healthcare where Symbiotic AIR meets Korean medicine', who: 'Jun-Hyeong Do · KIOM' }
       },
       {
-        tbd: true,
-        ko: { title: '주제 미정', who: '한국한의학연구원' },
-        en: { title: 'Topic to be announced', who: 'KIOM (Korea Institute of Oriental Medicine)' }
+        ko: { title: '실가상 융합 공간에서의 공감 상호작용 기술', who: '길연희 · ETRI' },
+        // 영문 표기 근거: OpenAlex 저자 Youn-Hee Gil (ETRI 소속 48편, VR · 촉각 상호작용)
+        en: { title: 'Empathetic interaction technology in blended real-virtual spaces', who: 'Youn-Hee Gil · ETRI' }
       },
       {
-        tbd: true,
-        ko: { title: '주제 미정', who: '하태진 · 버넥트' },
-        en: { title: 'Topic to be announced', who: 'Taejin Ha · VIRNECT' }
+        ko: { title: '산업용 XR과 피지컬 AI의 융합과 확장', who: '하태진 · 버넥트' },
+        // 영문 표기 근거: VIRNECT 공식 영문 보도자료
+        en: { title: 'Convergence and expansion of industrial XR and physical AI', who: 'Taejin Ha · VIRNECT' }
       }
     ],
     // 목록 아래에 붙는 안내 문구

@@ -58,7 +58,7 @@
     'about.k.fee':   'Fee',
     'about.v.fee':   'Free, advance registration required',
     'about.k.ask':   'Contact',
-    'about.v.ask':   '<a href="mailto:yoon-jh@kaist.ac.kr">yoon-jh@kaist.ac.kr</a>',
+    'about.v.ask':   '<a href="mailto:arrc@kaist.ac.kr">arrc@kaist.ac.kr</a>',
 
     'program.title': 'Program',
     'program.note':  'The schedule below may change slightly.',

@@ -917,7 +917,8 @@ button:focus-visible,
 
 .foot__cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* 카드 수가 바뀌어도 줄이 자연스럽게 접히도록 auto-fit 을 쓴다. */
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1rem;
 }
 .fcard {

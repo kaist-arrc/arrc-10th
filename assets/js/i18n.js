@@ -16,8 +16,6 @@
   'use strict';
 
   var EN = {
-    'draft.notice': 'The program and speakers are not final and may change.',
-
     'nav.about':   'Overview',
     'nav.program': 'Program',
     'nav.history': 'Ten years',
@@ -125,6 +123,7 @@
     'foot.c1.k': 'Research center',
     'foot.c2.k': 'KAIST UVR Lab',
     'foot.c3.k': 'Metaverse Graduate School',
+    'foot.c4.k': 'Graduate School of Culture Technology',
     'foot.org':  'Augmented Reality Research Center (ARRC), KAIST Institute for IT-AI Convergence<br>KI Building (E4), 291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea'
   };
 

@@ -97,11 +97,6 @@
     'orgs.support':  'SUPPORTED BY',
     'orgs.partners': 'PARTNERS',
 
-    'stats.title':    'ARRC in numbers',
-    'stats.members':  'researchers',
-    'stats.projects': 'active projects',
-    'stats.pubs':     'publications',
-
     'venue.title':       'Getting here',
     'venue.addrHead':    'Address',
     'venue.addr':        '291 Daehak-ro, Yuseong-gu, Daejeon<br>Matrix Hall, 2F, KI Building (E4), KAIST',

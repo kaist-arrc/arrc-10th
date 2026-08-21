@@ -315,7 +315,7 @@
   function setupReveal() {
     // JS 가 동작할 때만 숨겼다가 보여 준다. 스크립트가 실패하면 그냥 다 보인다.
     var targets = $$('.section__title, .section__note, .facts, .agenda, .model, .loop, ' +
-                     '.concepts, .vrail, .timeline, .bento, .stats, .venue, ' +
+                     '.concepts, .vrail, .timeline, .bento, .venue, ' +
                      '.register__inner, .orgs__list, .foot__cards');
     if (!targets.length || reduceMotion || !('IntersectionObserver' in window)) return;
 
@@ -330,43 +330,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
     targets.forEach(function (t) { io.observe(t); });
-  }
-
-  /* ── 숫자 카운트업 ─────────────────────────────────────── */
-
-  function setupStats() {
-    var nums = $$('.stat__num');
-    if (!nums.length) return;
-
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      nums.forEach(function (n) { n.textContent = n.dataset.count; });
-      return;
-    }
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        countUp(entry.target);
-        io.unobserve(entry.target);
-      });
-    }, { threshold: 0.4 });
-
-    nums.forEach(function (n) { io.observe(n); });
-  }
-
-  function countUp(node) {
-    var end = parseInt(node.dataset.count, 10) || 0;
-    var duration = 1100;
-    var start = null;
-
-    function frame(ts) {
-      if (start === null) start = ts;
-      var p = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      node.textContent = String(Math.round(end * eased));
-      if (p < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
   }
 
   /* ── 네비게이션 ────────────────────────────────────────── */
@@ -448,7 +411,6 @@
     startCountdown();
     setupNav();
     setupVideoRail();  // 카드가 그려진 뒤에 화살표 상태를 계산한다.
-    setupStats();
     setupReveal();
   }
 

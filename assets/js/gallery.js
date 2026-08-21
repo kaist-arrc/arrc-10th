@@ -8,7 +8,7 @@
    지금 배치는 이렇습니다.
      1줄  transspace(4) + authoring(2)
      2줄  transspace 계속  + heritage(2)
-     3줄  people(3)        + placeholder(3)
+     3줄  people(3)        + opening(3)
 
    TODO: placeholder-*.svg 로 표시된 자리는 실제 사진으로 교체해 주세요.
          파일만 같은 경로에 덮어써도 되고, src 를 바꿔도 됩니다.
@@ -44,11 +44,10 @@ window.ARRC_GALLERY = [
     en: { caption: 'The people of ARRC', alt: 'Center members gathered on campus in spring' }
   },
   {
-    src: 'assets/img/placeholder-event.svg',
+    src: 'assets/img/arrc-opening.jpg',
     col: 3,
     row: 1,
-    placeholder: true,
-    ko: { caption: '행사 스냅샷', alt: '사진 준비 중' },
-    en: { caption: 'Event snapshots', alt: 'Photo coming soon' }
+    ko: { caption: '2016년 개소기념 강연', alt: '2016년 증강현실연구센터 개소기념 강연에 모인 참석자 단체 사진' },
+    en: { caption: '2016 opening commemorative lecture', alt: 'Group photo of attendees at the 2016 ARRC opening commemorative lecture' }
   }
 ];
